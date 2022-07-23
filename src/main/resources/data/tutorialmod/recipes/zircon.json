@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "copper_ingot",
+  "ingredients": [
+    {
+      "item": "tutorialmod:zircon_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tutorialmod:zircon"
+  }
+}
