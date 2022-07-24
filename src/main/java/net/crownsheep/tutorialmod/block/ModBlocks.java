@@ -2,6 +2,7 @@ package net.crownsheep.tutorialmod.block;
 
 import net.crownsheep.tutorialmod.TutorialMod;
 import net.crownsheep.tutorialmod.block.custom.JumpyBlock;
+import net.crownsheep.tutorialmod.block.custom.ZirconLampBlock;
 import net.crownsheep.tutorialmod.item.ModCreativeModeTab;
 import net.crownsheep.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -39,6 +40,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
             () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> ZIRCON_LAMP = registerBlock("zircon_lamp",
+            () -> new ZirconLampBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(ZirconLampBlock.LIT)  ? 15 : 0)), ModCreativeModeTab.TUTORIAL_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
