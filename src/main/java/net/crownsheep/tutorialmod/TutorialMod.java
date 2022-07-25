@@ -3,6 +3,7 @@ package net.crownsheep.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.crownsheep.tutorialmod.block.ModBlocks;
 import net.crownsheep.tutorialmod.item.ModItems;
+import net.crownsheep.tutorialmod.painting.ModPaintings;
 import net.crownsheep.tutorialmod.villager.ModVillagers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -28,11 +29,13 @@ public class TutorialMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModVillagers.register(modEventBus);
 
-        modEventBus.addListener(this::commonSetup);
+        ModVillagers.register(modEventBus);
+        ModPaintings.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        modEventBus.addListener(this::commonSetup);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
