@@ -3,6 +3,7 @@ package net.crownsheep.tutorialmod.block;
 import net.crownsheep.tutorialmod.TutorialMod;
 import net.crownsheep.tutorialmod.block.custom.BlueBerryCropBlock;
 import net.crownsheep.tutorialmod.block.custom.JumpyBlock;
+import net.crownsheep.tutorialmod.block.custom.WoodcutterBlock;
 import net.crownsheep.tutorialmod.block.custom.ZirconLampBlock;
 import net.crownsheep.tutorialmod.item.ModCreativeModeTab;
 import net.crownsheep.tutorialmod.item.ModItems;
@@ -38,6 +39,14 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block> ENDSTONE_ZIRCON_ORE = registerBlock("endstone_zircon_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block> NETHERRACK_ZIRCON_ORE = registerBlock("netherrack_zircon_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
 
     public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
             () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE)
@@ -50,6 +59,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BLUEBERRY_CROP = BLOCKS.register("blueberry_crop",
             () -> new BlueBerryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
+    public static final RegistryObject<Block> WOODCUTTER = registerBlock("woodcutter",
+            () -> new WoodcutterBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(0.6f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.TUTORIAL_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

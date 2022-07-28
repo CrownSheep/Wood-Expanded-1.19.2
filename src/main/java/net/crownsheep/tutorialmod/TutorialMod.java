@@ -4,7 +4,9 @@ import com.mojang.logging.LogUtils;
 import net.crownsheep.tutorialmod.block.ModBlocks;
 import net.crownsheep.tutorialmod.item.ModItems;
 import net.crownsheep.tutorialmod.painting.ModPaintings;
-import net.crownsheep.tutorialmod.villager.ModVillagers;
+import net.crownsheep.tutorialmod.world.villager.ModVillagers;
+import net.crownsheep.tutorialmod.world.feature.ModConfiguredFeatures;
+import net.crownsheep.tutorialmod.world.feature.ModPlacedFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +35,9 @@ public class TutorialMod
         ModVillagers.register(modEventBus);
         ModPaintings.register(modEventBus);
 
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
+
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::commonSetup);
@@ -52,6 +57,7 @@ public class TutorialMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUEBERRY_CROP.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODCUTTER.get(), RenderType.cutout());
         }
     }
 }
