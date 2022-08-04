@@ -14,6 +14,7 @@
   "block.tutorialmod.endstone_zircon_ore": "Endstone Zircon Ore",
   "block.tutorialmod.netherrack_zircon_ore": "Netherrack Zircon Ore",
   "block.tutorialmod.woodcutter": "Woodcutter",
+  "block.tutorialmod.quicksand": "Quicksand",
 
 
 
@@ -23,6 +24,9 @@
 
   "key.category.tutorialmod.tutorial": "Tutorial Mod",
   "key.tutorialmod.drink_water": "Drink Water",
+
+  "message.tutorialmod.drink_water": "Drinking Water",
+  "message.tutorialmod.no_water": "No water nearby!",
 
   "container.woodcutter" : "Woodcutter"
 }

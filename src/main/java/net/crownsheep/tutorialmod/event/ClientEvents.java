@@ -1,11 +1,10 @@
 package net.crownsheep.tutorialmod.event;
 
 import net.crownsheep.tutorialmod.TutorialMod;
+import net.crownsheep.tutorialmod.networking.ModMessages;
+import net.crownsheep.tutorialmod.networking.packet.DrinkWaterC2SPacket;
+import net.crownsheep.tutorialmod.networking.packet.ExampleC2SPacket;
 import net.crownsheep.tutorialmod.util.KeyBinding;
-import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
@@ -24,8 +23,7 @@ public class ClientEvents {
         public static void onKeyInput(InputEvent.Key event) {
             {
                 if (KeyBinding.DRINKING_KEY.consumeClick()) {
-                    Player player = Minecraft.getInstance().player;
-                    player.sendSystemMessage(Component.literal("Pressed a Key!"));
+                    ModMessages.sendToServer(new DrinkWaterC2SPacket());
                 }
             }
         }
