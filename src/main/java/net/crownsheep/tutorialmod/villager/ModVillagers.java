@@ -1,4 +1,4 @@
-package net.crownsheep.tutorialmod.world.villager;
+package net.crownsheep.tutorialmod.villager;
 
 import com.google.common.collect.ImmutableSet;
 import net.crownsheep.tutorialmod.TutorialMod;

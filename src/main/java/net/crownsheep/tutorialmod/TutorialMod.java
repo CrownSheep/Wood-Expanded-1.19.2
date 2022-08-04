@@ -3,8 +3,9 @@ package net.crownsheep.tutorialmod;
 import com.mojang.logging.LogUtils;
 import net.crownsheep.tutorialmod.block.ModBlocks;
 import net.crownsheep.tutorialmod.item.ModItems;
+import net.crownsheep.tutorialmod.networking.ModMessages;
 import net.crownsheep.tutorialmod.painting.ModPaintings;
-import net.crownsheep.tutorialmod.world.villager.ModVillagers;
+import net.crownsheep.tutorialmod.villager.ModVillagers;
 import net.crownsheep.tutorialmod.world.feature.ModConfiguredFeatures;
 import net.crownsheep.tutorialmod.world.feature.ModPlacedFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -47,6 +48,8 @@ public class TutorialMod
         event.enqueueWork(() -> {
             ModVillagers.registerPOIs();
         });
+
+        ModMessages.register();
     }
 
 
