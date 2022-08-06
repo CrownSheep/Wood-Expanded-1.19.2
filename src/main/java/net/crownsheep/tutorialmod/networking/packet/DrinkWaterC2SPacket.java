@@ -1,5 +1,7 @@
 package net.crownsheep.tutorialmod.networking.packet;
 
+import net.crownsheep.tutorialmod.networking.ModMessages;
+import net.crownsheep.tutorialmod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -36,28 +38,24 @@ public class DrinkWaterC2SPacket {
             // HERE WE ARE ON THE SERVER!
             ServerPlayer player = context.getSender();
             ServerLevel level = player.getLevel();
-
-            if(hasWaterAroundThem(player, level, 2)) {
-                // Notify the player that water has been drunk
-                player.sendSystemMessage(Component.translatable(MESSAGE_DRINK_WATER).withStyle(ChatFormatting.DARK_AQUA));
-                // play the drinking sound
-                level.playSound(null, player.getOnPos(), SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS,
-                        0.5F, level.random.nextFloat() * 0.1F + 0.9F);
-
-                // increase the water level / thirst level of player
-                // Output the current thirst level
-
-            } else {
-                // Notify the player that there is no water around!
-                player.sendSystemMessage(Component.translatable(MESSAGE_NO_WATER).withStyle(ChatFormatting.RED));
-                // Output the current thirst level
-            }
+            player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> {
+                if (hasWaterAroundThem(player, level, 0.85f) && thirst.getThirst() < 10) {
+                    // Notify the player that water has been drunk
+                    // play the drinking sound
+                    level.playSound(null, player.getOnPos(), SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS,
+                            0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+                    thirst.addThirst(1);
+                    ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), player);
+                } else {
+                    ModMessages.sendToPlayer(new ThirstDataSyncS2CPacket(thirst.getThirst()), player);
+                }
+            });
         });
         return true;
     }
-    private boolean hasWaterAroundThem(ServerPlayer player, ServerLevel level, int size) {
+
+    private boolean hasWaterAroundThem (ServerPlayer player, ServerLevel level,float size){
         return level.getBlockStates(player.getBoundingBox().inflate(size))
                 .filter(state -> state.is(Blocks.WATER)).toArray().length > 0;
     }
-
 }
