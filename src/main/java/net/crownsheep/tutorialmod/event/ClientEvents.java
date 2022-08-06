@@ -6,10 +6,17 @@ import net.crownsheep.tutorialmod.networking.ModMessages;
 import net.crownsheep.tutorialmod.networking.packet.DrinkWaterC2SPacket;
 import net.crownsheep.tutorialmod.networking.packet.ExampleC2SPacket;
 import net.crownsheep.tutorialmod.util.KeyBinding;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 

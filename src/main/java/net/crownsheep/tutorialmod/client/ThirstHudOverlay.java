@@ -21,7 +21,7 @@ public class ThirstHudOverlay {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, EMPTY_THIRST);
-        if (!gui.getMinecraft().player.isCreative() && !gui.getMinecraft().player.isSpectator()) {
+        if (!gui.getMinecraft().player.isCreative() && !gui.getMinecraft().player.isSpectator() && !gui.getMinecraft().player.isUnderWater()) {
             for (int i = 0; i < 10; i++) {
                 GuiComponent.blit(poseStack, x + 7 + (i * 8), y - 54, 0, 0, 12, 12,
                         12, 12);
@@ -29,7 +29,7 @@ public class ThirstHudOverlay {
         }
 
         RenderSystem.setShaderTexture(0, FILLED_THIRST);
-        if (!gui.getMinecraft().player.isCreative() && !gui.getMinecraft().player.isSpectator()) {
+        if (!gui.getMinecraft().player.isCreative() && !gui.getMinecraft().player.isSpectator() && !gui.getMinecraft().player.isUnderWater()) {
             for (int i = 0; i < 10; i++) {
                 if (ClientThirstData.getPlayerThirst() > i) {
                     GuiComponent.blit(poseStack, x + 7 + (i * 8), y - 54, 0, 0, 12, 12,
