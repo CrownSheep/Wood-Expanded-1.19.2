@@ -23,20 +23,30 @@ public class ModEvents {
     public static void addCustomTrades(VillagerTradesEvent event) {
         if (event.getType() == ModVillagers.CARPENTER.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(Items.EMERALD, 2);
+            ItemStack stack = new ItemStack(ModItems.PAINT_BRUSH.get(), 1); // sell
             int villagerLevel = 1;
 
-            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
-                    new ItemStack(ModItems.PAINT_BRUSH.get(), 1),
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer( // payment
+                    new ItemStack(Items.EMERALD, 2),
                     stack, 10, 8, 0.02F));
         }
 
         if (event.getType() == ModVillagers.CARPENTER.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModBlocks.BLANK_WOOD.get(), 16);
+            ItemStack stack = new ItemStack(Items.EMERALD, 4); // sell
             int villagerLevel = 1;
 
-            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer( // payment
+                    new ItemStack(ModBlocks.BLANK_WOOD.get(), 12),
+                    stack, 10, 8, 0.02F));
+        }
+
+        if (event.getType() == ModVillagers.CARPENTER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItems.BLUE_PAINT_BRUSH.get(), 1); // sell
+            int villagerLevel = 2;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer( // payment
                     new ItemStack(Items.EMERALD, 5),
                     stack, 10, 8, 0.02F));
         }

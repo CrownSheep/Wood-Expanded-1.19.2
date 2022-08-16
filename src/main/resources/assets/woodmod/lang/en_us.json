@@ -21,5 +21,7 @@
 
   "death.attack.drawer": "%1$s stub a toe in a drawer",
 
+  "entity.minecraft.villager.woodmod.carpenter": "Carpenter",
+
   "woodmod.container.drawer": "Drawer"
 }
