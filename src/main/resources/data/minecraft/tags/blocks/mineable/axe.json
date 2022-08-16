@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
-    "tutorialmod:woodcutter"
+    "woodmod:blank_wood",
+    "woodmod:old_wood",
+    "woodmod:blue_planks",
+    "woodmod:green_planks",
+    "woodmod:red_planks",
+    "woodmod:yellow_planks"
   ]
 }

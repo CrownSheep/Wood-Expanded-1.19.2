@@ -1,0 +1,25 @@
+{
+  "item.woodmod.paint_brush": "Paint Brush",
+  "item.woodmod.blue_paint_brush": "Blue Paint Brush",
+  "item.woodmod.green_paint_brush": "Green Paint Brush",
+  "item.woodmod.red_paint_brush": "Red Paint Brush",
+  "item.woodmod.yellow_paint_brush": "Yellow Paint Brush",
+  "item.woodmod.orange_paint_brush": "Orange Paint Brush",
+  "item.woodmod.light_blue_paint_brush": "Light Blue Paint Brush",
+
+  "block.woodmod.old_wood": "Old Wood",
+  "block.woodmod.blank_wood": "Blank Wood",
+  "block.woodmod.blue_planks": "Blue Planks",
+  "block.woodmod.green_planks": "Green Planks",
+  "block.woodmod.red_planks": "Red Planks",
+  "block.woodmod.yellow_planks": "Yellow Planks",
+  "block.woodmod.orange_planks": "Orange Planks",
+  "block.woodmod.light_blue_planks": "Light Blue Planks",
+  "block.woodmod.wooden_drawer": "Wooden Drawer",
+
+  "itemGroup.woodmod": "Untitled Wood Mod",
+
+  "death.attack.drawer": "%1$s stub a toe in a drawer",
+
+  "woodmod.container.drawer": "Drawer"
+}

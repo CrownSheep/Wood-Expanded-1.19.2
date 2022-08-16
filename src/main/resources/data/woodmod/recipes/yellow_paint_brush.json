@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:yellow_dye"
+    },
+    {
+      "item": "woodmod:paint_brush"
+    }
+  ],
+  "result": {
+    "item": "woodmod:yellow_paint_brush",
+    "count": 1
+  }
+}
