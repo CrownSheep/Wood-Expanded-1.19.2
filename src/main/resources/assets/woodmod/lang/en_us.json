@@ -6,6 +6,8 @@
   "item.woodmod.yellow_paint_brush": "Yellow Paint Brush",
   "item.woodmod.orange_paint_brush": "Orange Paint Brush",
   "item.woodmod.light_blue_paint_brush": "Light Blue Paint Brush",
+  "item.woodmod.pink_paint_brush": "Pink Paint Brush",
+  "item.woodmod.purple_paint_brush": "Purple Paint Brush",
 
   "block.woodmod.old_wood": "Old Wood",
   "block.woodmod.blank_wood": "Blank Wood",
@@ -15,13 +17,11 @@
   "block.woodmod.yellow_planks": "Yellow Planks",
   "block.woodmod.orange_planks": "Orange Planks",
   "block.woodmod.light_blue_planks": "Light Blue Planks",
-  "block.woodmod.wooden_drawer": "Wooden Drawer",
+  "block.woodmod.pink_planks": "Pink Planks",
+  "block.woodmod.purple_planks": "Purple Planks",
+  "block.woodmod.wood_layer": "Wood Layer",
 
   "itemGroup.woodmod": "Untitled Wood Mod",
 
-  "death.attack.drawer": "%1$s stub a toe in a drawer",
-
-  "entity.minecraft.villager.woodmod.carpenter": "Carpenter",
-
-  "woodmod.container.drawer": "Drawer"
+  "entity.minecraft.villager.woodmod.carpenter": "Carpenter"
 }

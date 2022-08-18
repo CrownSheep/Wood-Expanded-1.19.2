@@ -6,6 +6,11 @@
     "woodmod:blue_planks",
     "woodmod:green_planks",
     "woodmod:red_planks",
-    "woodmod:yellow_planks"
+    "woodmod:yellow_planks",
+    "woodmod:orange_planks",
+    "woodmod:light_blue_planks",
+    "woodmod:pink_planks",
+    "woodmod:purple_planks",
+    "woodmod:wood_layer"
   ]
 }

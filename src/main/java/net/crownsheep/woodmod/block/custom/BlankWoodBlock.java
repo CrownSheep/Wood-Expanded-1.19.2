@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -27,7 +28,8 @@ public class BlankWoodBlock extends Block {
         ItemStack itemstack = player.getItemInHand(hand);
         Item item;
         if (!itemstack.is(ModItems.BLUE_PAINT_BRUSH.get()) && !itemstack.is(ModItems.GREEN_PAINT_BRUSH.get()) && !itemstack.is(ModItems.RED_PAINT_BRUSH.get())
-                && !itemstack.is(ModItems.YELLOW_PAINT_BRUSH.get()) && !itemstack.is(ModItems.ORANGE_PAINT_BRUSH.get()) && !itemstack.is(ModItems.LIGHT_BLUE_PAINT_BRUSH.get())) {
+            && !itemstack.is(ModItems.YELLOW_PAINT_BRUSH.get()) && !itemstack.is(ModItems.ORANGE_PAINT_BRUSH.get()) && !itemstack.is(ModItems.LIGHT_BLUE_PAINT_BRUSH.get())
+                && !itemstack.is(ModItems.PINK_PAINT_BRUSH.get()) && !itemstack.is(ModItems.PURPLE_PAINT_BRUSH.get())) {
             return super.use(state, level, blockPos, player, hand, hitResult);
         } else {
             if(itemstack.is(ModItems.BLUE_PAINT_BRUSH.get())) {
@@ -114,6 +116,33 @@ public class BlankWoodBlock extends Block {
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }
 
+            if(itemstack.is(ModItems.PINK_PAINT_BRUSH.get())) {
+                level.setBlock(blockPos, ModBlocks.PINK_PLANKS.get().defaultBlockState(), 11);
+                level.playSound(player, player, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1, 1);
+                item = itemstack.getItem();
+                if (!player.isCreative()) {
+                    if (itemstack.is(ModItems.PINK_PAINT_BRUSH.get())) {
+                        player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                    }
+                }
+
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
+
+            if(itemstack.is(ModItems.PURPLE_PAINT_BRUSH.get())) {
+                level.setBlock(blockPos, ModBlocks.PURPLE_PLANKS.get().defaultBlockState(), 11);
+                level.playSound(player, player, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1, 1);
+                item = itemstack.getItem();
+                if (!player.isCreative()) {
+                    if (itemstack.is(ModItems.PURPLE_PAINT_BRUSH.get())) {
+                        player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                    }
+                }
+
+                player.awardStat(Stats.ITEM_USED.get(item));
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
         }
         return null;
     }

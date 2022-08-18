@@ -8,6 +8,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -22,10 +23,6 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, WoodMod.MOD_ID);
-
-    public static final RegistryObject<Block> WOODEN_DRAWER = registerBlock("wooden_drawer",
-            () -> new WoodenDrawerBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(3.0F, 4.0F)), ModCreativeModeTab.TUTORIAL_TAB);
 
     public static final RegistryObject<Block> OLD_WOOD = registerBlock("old_wood",
             () -> new OldWoodBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
@@ -59,9 +56,18 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    public static final RegistryObject<Block> METAL_PLANKS = registerBlock("metal_planks",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL))
-                , ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block> PINK_PLANKS = registerBlock("pink_planks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> PURPLE_PLANKS = registerBlock("purple_planks",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> WOOD_LAYER = registerBlock("wood_layer",
+            () -> new WoodLayerBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
