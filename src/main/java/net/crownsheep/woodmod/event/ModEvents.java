@@ -44,7 +44,7 @@ public class ModEvents {
             int villagerLevel = 1;
 
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer( // payment
-                    new ItemStack(Items.EMERALD, 3),
+                    new ItemStack(Items.EMERALD, 2),
                     stack, 10, 8, 0.02F));
         }
 
