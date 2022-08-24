@@ -7,9 +7,7 @@ import net.crownsheep.woodmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SnowLayerBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -64,7 +62,15 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    public static final RegistryObject<Block> WOOD_LAYER = registerBlock("wood_layer",
+    public static final RegistryObject<Block> OAK_WOOD_LAYER = registerBlock("oak_wood_layer",
+            () -> new WoodLayerBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> BIRCH_WOOD_LAYER = registerBlock("birch_wood_layer",
+            () -> new WoodLayerBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> SPRUCE_WOOD_LAYER = registerBlock("spruce_wood_layer",
             () -> new WoodLayerBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
 

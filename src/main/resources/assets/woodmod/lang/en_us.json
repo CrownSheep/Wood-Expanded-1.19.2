@@ -19,7 +19,10 @@
   "block.woodmod.light_blue_planks": "Light Blue Planks",
   "block.woodmod.pink_planks": "Pink Planks",
   "block.woodmod.purple_planks": "Purple Planks",
-  "block.woodmod.wood_layer": "Wood Layer",
+  "block.woodmod.oak_wood_layer": "Oak Wood Layer",
+  "block.woodmod.birch_wood_layer": "Birch Wood Layer",
+  "block.woodmod.spruce_wood_layer": "Spruce Wood Layer",
+  "block.woodmod.oak_wood_wall": "Oak Wood Wall",
 
   "itemGroup.woodmod": "Untitled Wood Mod",
 

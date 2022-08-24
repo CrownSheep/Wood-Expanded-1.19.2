@@ -26,7 +26,6 @@ public class WoodLayerBlock extends Block {
     public static final int MAX_HEIGHT = 8;
     public static final IntegerProperty LAYERS = BlockStateProperties.LAYERS;
     protected static final VoxelShape[] SHAPE_BY_LAYER = new VoxelShape[]{Shapes.empty(), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D), Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
-    public static final int HEIGHT_IMPASSABLE = 5;
 
     public WoodLayerBlock(Properties properties) {
         super(properties);
@@ -72,7 +71,7 @@ public class WoodLayerBlock extends Block {
 
     public boolean canBeReplaced(BlockState p_56589_, BlockPlaceContext p_56590_) {
         int i = p_56589_.getValue(LAYERS);
-        if (p_56590_.getItemInHand().is(this.asItem()) && i < 8) {
+        if (p_56590_.getItemInHand().is(this.asItem().asItem()) && i < 8) {
             if (p_56590_.replacingClickedOnBlock()) {
                 return p_56590_.getClickedFace() == Direction.UP;
             } else {
