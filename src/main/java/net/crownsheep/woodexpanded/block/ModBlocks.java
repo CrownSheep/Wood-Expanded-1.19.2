@@ -62,18 +62,6 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
 
-    public static final RegistryObject<Block> OAK_WOOD_LAYER = registerBlock("oak_wood_layer",
-            () -> new WoodLayerBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
-
-    public static final RegistryObject<Block> BIRCH_WOOD_LAYER = registerBlock("birch_wood_layer",
-            () -> new WoodLayerBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
-
-    public static final RegistryObject<Block> SPRUCE_WOOD_LAYER = registerBlock("spruce_wood_layer",
-            () -> new WoodLayerBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
-
     public static final RegistryObject<Block> OAK_TABLE = registerBlock("oak_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);

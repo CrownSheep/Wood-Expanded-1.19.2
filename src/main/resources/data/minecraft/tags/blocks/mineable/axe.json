@@ -1,16 +1,15 @@
 {
   "replace": false,
   "values": [
-    "woodmod:blank_wood",
-    "woodmod:old_wood",
-    "woodmod:blue_planks",
-    "woodmod:green_planks",
-    "woodmod:red_planks",
-    "woodmod:yellow_planks",
-    "woodmod:orange_planks",
-    "woodmod:light_blue_planks",
-    "woodmod:pink_planks",
-    "woodmod:purple_planks",
-    "woodmod:wood_layer"
+    "woodexpanded:blank_wood",
+    "woodexpanded:old_wood",
+    "woodexpanded:blue_planks",
+    "woodexpanded:green_planks",
+    "woodexpanded:red_planks",
+    "woodexpanded:yellow_planks",
+    "woodexpanded:orange_planks",
+    "woodexpanded:light_blue_planks",
+    "woodexpanded:pink_planks",
+    "woodexpanded:purple_planks"
   ]
 }

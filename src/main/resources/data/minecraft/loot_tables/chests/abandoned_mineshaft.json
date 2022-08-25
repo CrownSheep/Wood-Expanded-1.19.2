@@ -322,7 +322,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "woodmod:old_wood",
+          "name": "woodexpanded:old_wood",
           "weight": 80
         }
       ],

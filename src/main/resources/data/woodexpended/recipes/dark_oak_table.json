@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dark_oak_wood"
+    },
+    "S": {
+      "item": "minecraft:stripped_dark_oak_wood"
+    }
+  },
+  "result": {
+    "item": "woodexpanded:dark_oak_table",
+    "count": 1
+  },
+  "group": "tables"
+}

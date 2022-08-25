@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:spruce_wood"
+    },
+    "S": {
+      "item": "minecraft:stripped_spruce_wood"
+    }
+  },
+  "result": {
+    "item": "woodexpanded:spruce_table",
+    "count": 1
+  },
+  "group": "tables"
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:acacia_wood"
+    },
+    "S": {
+      "item": "minecraft:stripped_acacia_wood"
+    }
+  },
+  "result": {
+    "item": "woodexpanded:acacia_table",
+    "count": 1
+  },
+  "group": "tables"
+}

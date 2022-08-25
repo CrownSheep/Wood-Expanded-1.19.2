@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:birch_wood"
+    },
+    "S": {
+      "item": "minecraft:stripped_birch_wood"
+    }
+  },
+  "result": {
+    "item": "woodexpanded:birch_table",
+    "count": 1
+  },
+  "group": "tables"
+}

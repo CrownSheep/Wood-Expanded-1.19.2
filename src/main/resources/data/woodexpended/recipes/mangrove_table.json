@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:mangrove_wood"
+    },
+    "S": {
+      "item": "minecraft:stripped_mangrove_wood"
+    }
+  },
+  "result": {
+    "item": "woodexpanded:mangrove_table",
+    "count": 1
+  },
+  "group": "tables"
+}
