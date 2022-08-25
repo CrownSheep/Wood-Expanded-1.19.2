@@ -25,6 +25,7 @@ public class WoodMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModBlocks.register(modEventBus);
+
         ModItems.register(modEventBus);
 
         ModVillagers.register(modEventBus);
