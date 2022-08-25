@@ -98,6 +98,12 @@ public class ModBlocks {
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
 
+    public static final RegistryObject<Block> MANGROVE_TABLE = registerBlock("mangrove_table",
+            () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+
+
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

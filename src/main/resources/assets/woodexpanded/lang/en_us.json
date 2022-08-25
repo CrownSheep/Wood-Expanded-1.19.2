@@ -28,9 +28,11 @@
   "block.woodexpanded.dark_oak_table": "Dark Oak Table",
   "block.woodexpanded.jungle_table": "Jungle Table",
   "block.woodexpanded.acacia_table": "Acacia Table",
+  "block.woodexpanded.mangrove_table": "Mangrove Table",
 
 
-  "itemGroup.woodexpanded": "Untitled Wood Mod",
+
+  "itemGroup.woodexpanded": "Wood Expanded Tab",
 
   "entity.minecraft.villager.woodexpanded.carpenter": "Carpenter"
 }
