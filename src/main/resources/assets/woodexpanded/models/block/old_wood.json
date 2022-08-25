@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "woodexpended:block/old_wood"
+  }
+}
