@@ -1,4 +1,4 @@
-package net.crownsheep.woodexpended.item.custom;
+package net.crownsheep.woodexpanded.item.custom;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;

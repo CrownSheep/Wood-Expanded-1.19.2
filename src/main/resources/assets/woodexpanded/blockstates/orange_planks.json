@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "woodexpended:block/orange_planks" }
+    "": { "model": "woodexpanded:block/orange_planks" }
   }
 }

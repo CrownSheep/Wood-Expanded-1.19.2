@@ -1,8 +1,8 @@
-package net.crownsheep.woodexpended.villager;
+package net.crownsheep.woodexpanded.villager;
 
 import com.google.common.collect.ImmutableSet;
-import net.crownsheep.woodexpended.WoodExpended;
-import net.crownsheep.woodexpended.block.ModBlocks;
+import net.crownsheep.woodexpanded.WoodExpended;
+import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.VillagerProfession;

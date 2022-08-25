@@ -1,9 +1,9 @@
-package net.crownsheep.woodexpended.block;
+package net.crownsheep.woodexpanded.block;
 
-import net.crownsheep.woodexpended.WoodExpended;
-import net.crownsheep.woodexpended.block.custom.*;
-import net.crownsheep.woodexpended.item.ModCreativeModeTab;
-import net.crownsheep.woodexpended.item.ModItems;
+import net.crownsheep.woodexpanded.WoodExpended;
+import net.crownsheep.woodexpanded.block.custom.*;
+import net.crownsheep.woodexpanded.item.ModCreativeModeTab;
+import net.crownsheep.woodexpanded.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -96,10 +96,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> ACACIA_TABLE = registerBlock("acacia_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
-
-    public static final RegistryObject<Block> OAK_CHAIR = registerBlock("oak_chair",
-            () -> new ChairBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
 
 

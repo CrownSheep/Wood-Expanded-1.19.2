@@ -1,9 +1,9 @@
-package net.crownsheep.woodexpended;
+package net.crownsheep.woodexpanded;
 
 import com.mojang.logging.LogUtils;
-import net.crownsheep.woodexpended.block.ModBlocks;
-import net.crownsheep.woodexpended.item.ModItems;
-import net.crownsheep.woodexpended.villager.ModVillagers;
+import net.crownsheep.woodexpanded.block.ModBlocks;
+import net.crownsheep.woodexpanded.item.ModItems;
+import net.crownsheep.woodexpanded.villager.ModVillagers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 @Mod(WoodExpended.MOD_ID)
 public class WoodExpended
 {
-    public static final String MOD_ID = "woodexpended";
+    public static final String MOD_ID = "woodexpanded";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     // Very Important Comment

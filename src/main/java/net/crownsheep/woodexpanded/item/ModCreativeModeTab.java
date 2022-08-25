@@ -1,6 +1,6 @@
-package net.crownsheep.woodexpended.item;
+package net.crownsheep.woodexpanded.item;
 
-import net.crownsheep.woodexpended.block.ModBlocks;
+import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 

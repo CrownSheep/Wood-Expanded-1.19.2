@@ -1,10 +1,10 @@
-package net.crownsheep.woodexpended.event;
+package net.crownsheep.woodexpanded.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.crownsheep.woodexpended.WoodExpended;
-import net.crownsheep.woodexpended.block.ModBlocks;
-import net.crownsheep.woodexpended.item.ModItems;
-import net.crownsheep.woodexpended.villager.ModVillagers;
+import net.crownsheep.woodexpanded.WoodExpended;
+import net.crownsheep.woodexpanded.block.ModBlocks;
+import net.crownsheep.woodexpanded.item.ModItems;
+import net.crownsheep.woodexpanded.villager.ModVillagers;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

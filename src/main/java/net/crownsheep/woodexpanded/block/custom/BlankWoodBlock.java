@@ -1,7 +1,7 @@
-package net.crownsheep.woodexpended.block.custom;
+package net.crownsheep.woodexpanded.block.custom;
 
-import net.crownsheep.woodexpended.block.ModBlocks;
-import net.crownsheep.woodexpended.item.ModItems;
+import net.crownsheep.woodexpanded.block.ModBlocks;
+import net.crownsheep.woodexpanded.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

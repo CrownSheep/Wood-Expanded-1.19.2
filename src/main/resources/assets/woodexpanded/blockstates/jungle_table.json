@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "woodexpended:block/tables/jungle_table" }
+    "": { "model": "woodexpanded:block/tables/jungle_table" }
   }
 }

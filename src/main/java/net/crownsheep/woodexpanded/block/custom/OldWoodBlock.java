@@ -1,4 +1,4 @@
-package net.crownsheep.woodexpended.block.custom;
+package net.crownsheep.woodexpanded.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;

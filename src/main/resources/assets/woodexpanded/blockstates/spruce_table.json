@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "woodexpended:block/tables/spruce_table" }
+    "": { "model": "woodexpanded:block/tables/spruce_table" }
   }
 }

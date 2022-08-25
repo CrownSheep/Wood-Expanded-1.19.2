@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "woodexpended:block/old_wood" }
+    "": { "model": "woodexpanded:block/old_wood" }
   }
 }

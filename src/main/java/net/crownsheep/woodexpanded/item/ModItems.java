@@ -1,6 +1,6 @@
-package net.crownsheep.woodexpended.item;
+package net.crownsheep.woodexpanded.item;
 
-import net.crownsheep.woodexpended.WoodExpended;
+import net.crownsheep.woodexpanded.WoodExpended;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
