@@ -24,71 +24,75 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> OLD_WOOD = registerBlock("old_wood",
             () -> new OldWoodBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(1f)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(1f)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> BLANK_WOOD = registerBlock("blank_wood",
             () -> new BlankWoodBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> BLUE_PLANKS = registerBlock("blue_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> GREEN_PLANKS = registerBlock("green_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> RED_PLANKS = registerBlock("red_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> YELLOW_PLANKS = registerBlock("yellow_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> ORANGE_PLANKS = registerBlock("orange_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> LIGHT_BLUE_PLANKS = registerBlock("light_blue_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> PINK_PLANKS = registerBlock("pink_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> PURPLE_PLANKS = registerBlock("purple_planks",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> OAK_TABLE = registerBlock("oak_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> BIRCH_TABLE = registerBlock("birch_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> SPRUCE_TABLE = registerBlock("spruce_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> DARK_OAK_TABLE = registerBlock("dark_oak_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> JUNGLE_TABLE = registerBlock("jungle_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> ACACIA_TABLE = registerBlock("acacia_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> MANGROVE_TABLE = registerBlock("mangrove_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(2.0F, 3.0F)), ModCreativeModeTab.TUTORIAL_TAB);
+                    .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> WOODCUTTER = registerBlock("woodcutter",
+            () -> new WoodcutterBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+                    .strength(3.0F, 4.0F)), ModCreativeModeTab.WOOD_TAB);
 
 
 

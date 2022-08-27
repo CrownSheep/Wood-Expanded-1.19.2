@@ -30,6 +30,8 @@
   "block.woodexpanded.acacia_table": "Acacia Table",
   "block.woodexpanded.mangrove_table": "Mangrove Table",
 
+  "blockentity.woodexpanded.woodcutter": "Woodcutter",
+
 
 
   "itemGroup.woodexpanded": "Wood Expanded Tab",

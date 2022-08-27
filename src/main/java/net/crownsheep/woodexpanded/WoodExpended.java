@@ -2,7 +2,9 @@ package net.crownsheep.woodexpanded;
 
 import com.mojang.logging.LogUtils;
 import net.crownsheep.woodexpanded.block.ModBlocks;
+import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
 import net.crownsheep.woodexpanded.item.ModItems;
+import net.crownsheep.woodexpanded.screen.ModMenuTypes;
 import net.crownsheep.woodexpanded.villager.ModVillagers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,6 +31,9 @@ public class WoodExpended
         ModItems.register(modEventBus);
 
         ModVillagers.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
