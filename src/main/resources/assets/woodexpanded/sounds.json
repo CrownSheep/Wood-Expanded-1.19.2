@@ -1,0 +1,8 @@
+{
+  "ui_woodcutter_take_result": {
+    "subtitle": "sounds.woodexpanded.ui_woodcutter_take_result",
+    "sounds": [
+      "woodexpanded:ui_woodcutter_take_result"
+    ]
+  }
+}

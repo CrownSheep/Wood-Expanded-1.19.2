@@ -29,10 +29,11 @@
   "block.woodexpanded.jungle_table": "Jungle Table",
   "block.woodexpanded.acacia_table": "Acacia Table",
   "block.woodexpanded.mangrove_table": "Mangrove Table",
+  "block.woodexpanded.woodcutter": "Woodcutter",
 
   "blockentity.woodexpanded.woodcutter": "Woodcutter",
 
-
+  "sounds.woodexpanded.ui_woodcutter_take_result": "Woodcutter used",
 
   "itemGroup.woodexpanded": "Wood Expanded Tab",
 

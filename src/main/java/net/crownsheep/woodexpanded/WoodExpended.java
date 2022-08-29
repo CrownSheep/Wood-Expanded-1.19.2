@@ -5,7 +5,12 @@ import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
+import net.crownsheep.woodexpanded.screen.WoodcutterScreen;
+import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.crownsheep.woodexpanded.villager.ModVillagers;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -35,6 +40,8 @@ public class WoodExpended
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
 
+        ModSounds.register(modEventBus);
+
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::commonSetup);
@@ -53,7 +60,9 @@ public class WoodExpended
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODCUTTER.get(), RenderType.cutout());
 
+            MenuScreens.register(ModMenuTypes.WOODCUTTER_MENU.get(), WoodcutterScreen::new);
         }
     }
 }

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "woodmod:blank_wood"
+          "name": "woodexpanded:red_planks"
         }
       ]
     }

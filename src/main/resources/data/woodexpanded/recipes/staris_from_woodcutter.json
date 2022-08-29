@@ -1,0 +1,11 @@
+{
+  "type": "woodexpandad:woodcutting",
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "output": {
+    "item": "minecraft:diamond"
+  }
+}

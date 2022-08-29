@@ -3,6 +3,7 @@ package net.crownsheep.woodexpanded.villager;
 import com.google.common.collect.ImmutableSet;
 import net.crownsheep.woodexpanded.WoodExpended;
 import net.crownsheep.woodexpanded.block.ModBlocks;
+import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.VillagerProfession;
@@ -21,13 +22,13 @@ public class ModVillagers {
             DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, WoodExpended.MOD_ID);
 
     public static final RegistryObject<PoiType> WOODCUTTER_POI = POI_TYPES.register("woodcutter_poi",
-            () -> new PoiType(ImmutableSet.copyOf(ModBlocks.BLANK_WOOD.get().getStateDefinition().getPossibleStates()),
+            () -> new PoiType(ImmutableSet.copyOf(ModBlocks.WOODCUTTER.get().getStateDefinition().getPossibleStates()),
                     1, 1));
 
     public static final RegistryObject<VillagerProfession> CARPENTER = VILLAGER_PROFESSIONS.register("carpenter",
             () -> new VillagerProfession("carpenter", x -> x.get() == WOODCUTTER_POI.get(),
                     x -> x.get() == WOODCUTTER_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
-                    SoundEvents.VILLAGER_WORK_CLERIC));
+                    ModSounds.UI_WOODCUTTER_TAKE_RESULT.get()));
 
     public static void registerPOIs() {
         try {

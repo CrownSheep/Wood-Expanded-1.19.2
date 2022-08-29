@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:pink_dye"
+      "item": "minecraft:blue_dye"
     },
     {
-      "item": "woodmod:paint_brush"
+      "item": "woodexpanded:paint_brush"
     }
   ],
   "result": {
-    "item": "woodmod:purple_paint_brush",
+    "item": "woodexpanded:blue_paint_brush",
     "count": 1
   }
 }

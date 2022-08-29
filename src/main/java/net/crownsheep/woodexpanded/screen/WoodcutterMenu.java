@@ -2,8 +2,10 @@ package net.crownsheep.woodexpanded.screen;
 
 import com.google.common.collect.Lists;
 import net.crownsheep.woodexpanded.block.ModBlocks;
+import net.crownsheep.woodexpanded.recipe.ModRecipeType;
+import net.crownsheep.woodexpanded.recipe.WoodcutterRecipe;
+import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -15,8 +17,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.entity.BlockEntity;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     private final ContainerLevelAccess access;
     private final DataSlot selectedRecipeIndex = DataSlot.standalone();
     private final Level level;
-    private List<StonecutterRecipe> recipes = Lists.newArrayList();
+    private List recipes = Lists.newArrayList();
     private ItemStack input = ItemStack.EMPTY;
     long lastSoundTime;
     final Slot inputSlot;
@@ -51,7 +51,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     }
 
     public WoodcutterMenu(int p_40297_, Inventory p_40298_, final ContainerLevelAccess p_40299_) {
-        super(ModMenuTypes.WOODCUTTER_MENU.get(), p_40297_);
+        super(MenuType.STONECUTTER, p_40297_);
         this.access = p_40299_;
         this.level = p_40298_.player.level;
         this.inputSlot = this.addSlot(new Slot(this.container, 0, 20, 33));
@@ -71,7 +71,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
                 p_40299_.execute((p_40364_, p_40365_) -> {
                     long l = p_40364_.getGameTime();
                     if (WoodcutterMenu.this.lastSoundTime != l) {
-                        p_40364_.playSound((Player)null, p_40365_, SoundEvents.UI_STONECUTTER_TAKE_RESULT, SoundSource.BLOCKS, 1.0F, 5.5F);
+                        p_40364_.playSound((Player)null, p_40365_,  ModSounds.UI_WOODCUTTER_TAKE_RESULT.get(), SoundSource.BLOCKS, 1.0F, 1.0F);
                         WoodcutterMenu.this.lastSoundTime = l;
                     }
 
@@ -147,9 +147,9 @@ public class WoodcutterMenu extends AbstractContainerMenu {
 
     void setupResultSlot() {
         if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-            StonecutterRecipe stonecutterrecipe = this.recipes.get(this.selectedRecipeIndex.get());
-            this.resultContainer.setRecipeUsed(stonecutterrecipe);
-            this.resultSlot.set(stonecutterrecipe.assemble(this.container));
+            WoodcutterRecipe woodcutterRecipe = (WoodcutterRecipe) this.recipes.get(this.selectedRecipeIndex.get());
+            this.resultContainer.setRecipeUsed(woodcutterRecipe);
+            this.resultSlot.set(woodcutterRecipe.assemble(this.container));
         } else {
             this.resultSlot.set(ItemStack.EMPTY);
         }
@@ -158,7 +158,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     }
 
     public MenuType<?> getType() {
-        return MenuType.STONECUTTER;
+        return ModMenuTypes.WOODCUTTER_MENU.get();
     }
 
     public void registerUpdateListener(Runnable p_40324_) {
@@ -187,7 +187,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
                 if (!this.moveItemStackTo(itemstack1, 2, 38, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.level.getRecipeManager().getRecipeFor(RecipeType.STONECUTTING, new SimpleContainer(itemstack1), this.level).isPresent()) {
+            } else if (this.level.getRecipeManager().getRecipeFor(ModRecipeType.WOODCUTTING, new SimpleContainer(itemstack1), this.level).isPresent()) {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
                     return ItemStack.EMPTY;
                 }

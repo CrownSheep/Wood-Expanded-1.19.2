@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " I ",
+    "###",
+    "S S"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "#": {
+      "item": "minecraft:oak_slab"
+    },
+    "S": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "result": {
+    "item": "woodexpanded:woodcutter",
+    "count": 1
+  }
+}
