@@ -93,10 +93,4 @@ public class WoodcutterBlockEntity extends BlockEntity implements MenuProvider {
 
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-
-    public static void tick(Level level, BlockPos pos, BlockState state, WoodcutterBlockEntity pEntity) {
-        if(level.isClientSide()) {
-            return;
-        }
-    }
 }

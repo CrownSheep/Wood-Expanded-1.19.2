@@ -2,10 +2,10 @@
   "type": "woodexpandad:woodcutting",
   "ingredients": [
     {
-      "item": "minecraft:stick"
+      "item": "minecraft:stone"
     }
   ],
   "output": {
-    "item": "minecraft:diamond"
+    "item": "minecraft:stone_bricks"
   }
 }

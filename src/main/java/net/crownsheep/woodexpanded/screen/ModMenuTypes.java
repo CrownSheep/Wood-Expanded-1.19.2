@@ -3,6 +3,7 @@ package net.crownsheep.woodexpanded.screen;
 import net.crownsheep.woodexpanded.WoodExpended;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
+import net.minecraft.world.inventory.StonecutterMenu;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.network.IContainerFactory;
@@ -17,8 +18,7 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<WoodcutterMenu>> WOODCUTTER_MENU =
             registerMenuType(WoodcutterMenu::new, "woodcutter_menu");
 
-    private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
-                                                                                                  String name) {
+    private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }
 
