@@ -183,7 +183,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     }
 
     public MenuType<?> getType() {
-        return ModMenuTypes.WOODCUTTER_MENU.get();
+        return MenuType.STONECUTTER;
     }
 
     public void registerUpdateListener(Runnable pListener) {
