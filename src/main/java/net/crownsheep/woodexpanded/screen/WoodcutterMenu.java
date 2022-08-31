@@ -1,12 +1,8 @@
 package net.crownsheep.woodexpanded.screen;
 
 import com.google.common.collect.Lists;
-import net.crownsheep.woodexpanded.block.ModBlocks;
-import net.crownsheep.woodexpanded.recipe.ModRecipeTypes;
-import net.crownsheep.woodexpanded.recipe.WoodcutterRecipe;
 import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -19,7 +15,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.entity.BlockEntity;
 
 import java.util.List;
 
@@ -34,7 +29,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     /** The index of the selected recipe in the GUI. */
     private final DataSlot selectedRecipeIndex = DataSlot.standalone();
     private final Level level;
-    private List<WoodcutterRecipe> recipes = Lists.newArrayList();
+    private List<StonecutterRecipe> recipes = Lists.newArrayList();
     /** The {@plainlink ItemStack} set in the input slot by the player. */
     private ItemStack input = ItemStack.EMPTY;
     /**
@@ -61,8 +56,8 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     /** The inventory that stores the output of the crafting recipe. */
     final ResultContainer resultContainer = new ResultContainer();
 
-    public WoodcutterMenu(int pContainerId, Inventory pPlayerInventory) {
-        this(pContainerId, pPlayerInventory, ContainerLevelAccess.NULL);
+    public WoodcutterMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+        this(id, inv, ContainerLevelAccess.NULL);
     }
 
     public WoodcutterMenu(int pContainerId, Inventory pPlayerInventory, final ContainerLevelAccess pAccess) {
@@ -118,7 +113,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
         return this.selectedRecipeIndex.get();
     }
 
-    public List<WoodcutterRecipe> getRecipes() {
+    public List<StonecutterRecipe> getRecipes() {
         return this.recipes;
     }
 
@@ -170,16 +165,16 @@ public class WoodcutterMenu extends AbstractContainerMenu {
         this.selectedRecipeIndex.set(-1);
         this.resultSlot.set(ItemStack.EMPTY);
         if (!pStack.isEmpty()) {
-            this.recipes = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.WOODCUTTER_TYPE.get(), pContainer, this.level);
+            this.recipes = this.level.getRecipeManager().getRecipesFor(RecipeType.STONECUTTING, pContainer, this.level);
         }
 
     }
 
     void setupResultSlot() {
         if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-            WoodcutterRecipe woodcutterRecipe = this.recipes.get(this.selectedRecipeIndex.get());
-            this.resultContainer.setRecipeUsed(woodcutterRecipe);
-            this.resultSlot.set(woodcutterRecipe.assemble(this.container));
+            StonecutterRecipe stonecutterRecipe = this.recipes.get(this.selectedRecipeIndex.get());
+            this.resultContainer.setRecipeUsed(stonecutterRecipe);
+            this.resultSlot.set(stonecutterRecipe.assemble(this.container));
         } else {
             this.resultSlot.set(ItemStack.EMPTY);
         }
@@ -225,7 +220,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
                 if (!this.moveItemStackTo(itemstack1, 2, 38, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.level.getRecipeManager().getRecipeFor(ModRecipeTypes.WOODCUTTER_TYPE.get(), new SimpleContainer(itemstack1), this.level).isPresent()) {
+            } else if (this.level.getRecipeManager().getRecipeFor(RecipeType.STONECUTTING, new SimpleContainer(itemstack1), this.level).isPresent()) {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
                     return ItemStack.EMPTY;
                 }

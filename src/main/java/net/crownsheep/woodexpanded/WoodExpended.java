@@ -4,8 +4,6 @@ import com.mojang.logging.LogUtils;
 import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
 import net.crownsheep.woodexpanded.item.ModItems;
-import net.crownsheep.woodexpanded.recipe.ModRecipeTypes;
-import net.crownsheep.woodexpanded.recipe.ModRecipeSerializers;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
 import net.crownsheep.woodexpanded.screen.WoodcutterScreen;
 import net.crownsheep.woodexpanded.sound.ModSounds;
@@ -44,8 +42,6 @@ public class WoodExpended
 
         ModSounds.register(modEventBus);
 
-        ModRecipeSerializers.register(modEventBus);
-        ModRecipeTypes.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

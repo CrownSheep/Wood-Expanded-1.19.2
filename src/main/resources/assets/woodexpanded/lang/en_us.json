@@ -30,6 +30,12 @@
   "block.woodexpanded.acacia_table": "Acacia Table",
   "block.woodexpanded.mangrove_table": "Mangrove Table",
   "block.woodexpanded.woodcutter": "Woodcutter",
+  "block.woodexpanded.pine_log": "Pine Log",
+  "block.woodexpanded.pine_planks": "Pine Planks",
+  "block.woodexpanded.pine_wood": "Pine Wood",
+  "block.woodexpanded.stripped_pine_log": "Stripped Pine Log",
+  "block.woodexpanded.stripped_pine_wood": "Stripped Pine Wood",
+
 
   "blockentity.woodexpanded.woodcutter": "Woodcutter",
 
