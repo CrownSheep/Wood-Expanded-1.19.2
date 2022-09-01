@@ -38,9 +38,10 @@ public class WoodExpended
         ModVillagers.register(modEventBus);
 
         ModBlockEntities.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
 
         ModSounds.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -63,7 +64,6 @@ public class WoodExpended
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODCUTTER.get(), RenderType.cutout());
 
-            MenuScreens.register(ModMenuTypes.WOODCUTTER_MENU.get(), WoodcutterScreen::new);
         }
     }
 }

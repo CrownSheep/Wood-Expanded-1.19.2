@@ -3,6 +3,7 @@ package net.crownsheep.woodexpanded.recipe;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.*;
+import net.minecraftforge.eventbus.api.IEventBus;
 
 public interface ModRecipeTypes<T extends Recipe<?>> {
     RecipeType<WoodcutterRecipe> WOODCUTTING = register("woodcutting");
