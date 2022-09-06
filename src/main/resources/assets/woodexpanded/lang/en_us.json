@@ -9,8 +9,8 @@
   "item.woodexpanded.pink_paint_brush": "Pink Paint Brush",
   "item.woodexpanded.purple_paint_brush": "Purple Paint Brush",
 
-  "block.woodexpanded.old_wood": "Old Wood",
-  "block.woodexpanded.blank_wood": "Blank Wood",
+  "block.woodexpanded.old_planks": "Old Planks",
+  "block.woodexpanded.blank_planks": "Blank Planks",
   "block.woodexpanded.blue_planks": "Blue Planks",
   "block.woodexpanded.green_planks": "Green Planks",
   "block.woodexpanded.red_planks": "Red Planks",
@@ -35,13 +35,18 @@
   "block.woodexpanded.pine_wood": "Pine Wood",
   "block.woodexpanded.stripped_pine_log": "Stripped Pine Log",
   "block.woodexpanded.stripped_pine_wood": "Stripped Pine Wood",
+  "block.woodexpanded.oak_log_pile": "Oak Log Pile",
+  "block.woodexpanded.pine_leaves": "Pine Leaves",
+  "block.woodexpanded.pine_sapling": "Pine Sapling",
+  "block.woodexpanded.pine_slab": "Pine Slab",
+  "block.woodexpanded.pine_table": "Pine Table",
 
 
-  "blockentity.woodexpanded.woodcutter": "Woodcutter",
+  "container.woodexpanded.woodcutter": "Woodcutter",
 
   "sounds.woodexpanded.ui_woodcutter_take_result": "Woodcutter used",
 
-  "itemGroup.woodexpanded": "Wood Expanded Tab",
+  "itemGroup.woodexpanded": "Wood Expanded",
 
   "entity.minecraft.villager.woodexpanded.carpenter": "Carpenter"
 }

@@ -12,10 +12,6 @@ public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, WoodExpended.MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<WoodcutterBlockEntity>> WOODCUTTER =
-            BLOCK_ENTITIES.register("woodcutter", () ->
-                    BlockEntityType.Builder.of(WoodcutterBlockEntity::new,
-                            ModBlocks.WOODCUTTER.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

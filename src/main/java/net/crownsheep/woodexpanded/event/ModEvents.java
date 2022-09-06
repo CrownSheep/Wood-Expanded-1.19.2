@@ -1,19 +1,22 @@
 package net.crownsheep.woodexpanded.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenCustomHashMap;
 import net.crownsheep.woodexpanded.WoodExpended;
 import net.crownsheep.woodexpanded.block.ModBlocks;
+import net.crownsheep.woodexpanded.effect.ModEffects;
+import net.crownsheep.woodexpanded.effect.custom.WoodChipsEffect;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.villager.ModVillagers;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraft.world.level.biome.BiomeSpecialEffects;
+import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -46,18 +49,8 @@ public class ModEvents {
             int villagerLevel = 1;
 
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer( // payment
-                    new ItemStack(ModBlocks.BLANK_WOOD.get(), i),
+                    new ItemStack(ModBlocks.BLANK_PLANKS.get(), i),
                     stack, 10, 1, 0.02F));
-        }
-
-        if (event.getType() == ModVillagers.CARPENTER.get()) {
-            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            ItemStack stack = new ItemStack(ModItems.BLUE_PAINT_BRUSH.get(), 1); // sell
-            int villagerLevel = 2;
-
-            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer( // payment
-                    new ItemStack(Items.EMERALD, 5),
-                    stack, 10, 8, 0.02F));
         }
 
         if (event.getType() == ModVillagers.CARPENTER.get()) {
@@ -80,6 +73,6 @@ public class ModEvents {
 
         trades.add((trader, rand) -> new MerchantOffer( // payment
                 new ItemStack(Items.EMERALD, i - 6),
-                new ItemStack(ModBlocks.OLD_WOOD.get(), i), 10, 2, 0.02F));
+                new ItemStack(ModBlocks.OLD_PLANKS.get(), i), 10, 2, 0.02F));
     }
 }

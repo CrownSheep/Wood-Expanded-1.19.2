@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "woodexpanded:block/pine_slab"
+    },
+    "type=double": {
+      "model": "woodexpanded:block/pine_planks"
+    },
+    "type=top": {
+      "model": "woodexpanded:block/pine_slab_top"
+    }
+  }
+}

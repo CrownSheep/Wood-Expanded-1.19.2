@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "woodexpanded:block/tables/pine_table",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "woodexpanded:block/tables/pine_table"
+    },
+    "facing=south": {
+      "model": "woodexpanded:block/tables/pine_table",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "woodexpanded:block/tables/pine_table",
+      "y": 270
+    }
+  }
+}

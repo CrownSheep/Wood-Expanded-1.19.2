@@ -2,11 +2,8 @@ package net.crownsheep.woodexpanded.screen;
 
 import com.google.common.collect.Lists;
 import net.crownsheep.woodexpanded.block.ModBlocks;
-import net.crownsheep.woodexpanded.recipe.ModRecipeTypes;
-import net.crownsheep.woodexpanded.recipe.WoodcutterRecipe;
 import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -18,8 +15,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.StonecutterRecipe;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.entity.BlockEntity;
 
 import java.util.List;
 
@@ -33,7 +28,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     private final ContainerLevelAccess access;
     private final DataSlot selectedRecipeIndex = DataSlot.standalone();
     private final Level level;
-    private List<WoodcutterRecipe> recipes = Lists.newArrayList();
+    private List<StonecutterRecipe> recipes = Lists.newArrayList();
     private ItemStack input = ItemStack.EMPTY;
     long lastSoundTime;
     final Slot inputSlot;
@@ -100,7 +95,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
         return this.selectedRecipeIndex.get();
     }
 
-    public List<WoodcutterRecipe> getRecipes() {
+    public List<StonecutterRecipe> getRecipes() {
         return this.recipes;
     }
 
@@ -113,7 +108,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     }
 
     public boolean stillValid(Player p_40307_) {
-        return stillValid(this.access, p_40307_, ModBlocks.WOODCUTTER.get());
+        return stillValid(this.access, p_40307_, null);
     }
 
     public boolean clickMenuButton(Player p_40309_, int p_40310_) {
@@ -143,14 +138,14 @@ public class WoodcutterMenu extends AbstractContainerMenu {
         this.selectedRecipeIndex.set(-1);
         this.resultSlot.set(ItemStack.EMPTY);
         if (!p_40305_.isEmpty()) {
-            this.recipes = this.level.getRecipeManager().getRecipesFor(ModRecipeTypes.WOODCUTTING, p_40304_, this.level);
+            this.recipes = this.level.getRecipeManager().getRecipesFor(RecipeType.STONECUTTING, p_40304_, this.level);
         }
 
     }
 
     void setupResultSlot() {
         if (!this.recipes.isEmpty() && this.isValidRecipeIndex(this.selectedRecipeIndex.get())) {
-            WoodcutterRecipe woodcutterRecipe = this.recipes.get(this.selectedRecipeIndex.get());
+            StonecutterRecipe woodcutterRecipe = this.recipes.get(this.selectedRecipeIndex.get());
             this.resultContainer.setRecipeUsed(woodcutterRecipe);
             this.resultSlot.set(woodcutterRecipe.assemble(this.container));
         } else {
@@ -190,7 +185,7 @@ public class WoodcutterMenu extends AbstractContainerMenu {
                 if (!this.moveItemStackTo(itemstack1, 2, 38, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.level.getRecipeManager().getRecipeFor(ModRecipeTypes.WOODCUTTING, new SimpleContainer(itemstack1), this.level).isPresent()) {
+            } else if (this.level.getRecipeManager().getRecipeFor(RecipeType.STONECUTTING, new SimpleContainer(itemstack1), this.level).isPresent()) {
                 if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
                     return ItemStack.EMPTY;
                 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "woodexpanded:block/oak_log_pile",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "woodexpanded:block/oak_log_pile"
+    },
+    "facing=south": {
+      "model": "woodexpanded:block/oak_log_pile",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "woodexpanded:block/oak_log_pile",
+      "y": 270
+    }
+  }
+}

@@ -4,5 +4,11 @@
     "sounds": [
       "woodexpanded:ui_woodcutter_take_result"
     ]
+  },
+  "scythe_mowing": {
+    "subtitle": "sounds.woodexpanded.scythe_mowing",
+    "sounds": [
+      "woodexpanded:scythe_mowing"
+    ]
   }
 }

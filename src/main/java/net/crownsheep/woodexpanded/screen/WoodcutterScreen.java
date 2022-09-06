@@ -2,7 +2,6 @@ package net.crownsheep.woodexpanded.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.crownsheep.woodexpanded.recipe.WoodcutterRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -72,7 +71,7 @@ public class WoodcutterScreen extends AbstractContainerScreen<WoodcutterMenu> {
             int i = this.leftPos + 52;
             int j = this.topPos + 14;
             int k = this.startIndex + 12;
-            List<WoodcutterRecipe> list = this.menu.getRecipes();
+            List<StonecutterRecipe> list = this.menu.getRecipes();
 
             for(int l = this.startIndex; l < k && l < this.menu.getNumRecipes(); ++l) {
                 int i1 = l - this.startIndex;
@@ -105,7 +104,7 @@ public class WoodcutterScreen extends AbstractContainerScreen<WoodcutterMenu> {
     }
 
     private void renderRecipes(int pLeft, int pTop, int pRecipeIndexOffsetMax) {
-        List<WoodcutterRecipe> list = this.menu.getRecipes();
+        List<StonecutterRecipe> list = this.menu.getRecipes();
 
         for(int i = this.startIndex; i < pRecipeIndexOffsetMax && i < this.menu.getNumRecipes(); ++i) {
             int j = i - this.startIndex;

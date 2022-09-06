@@ -1,7 +1,7 @@
 package net.crownsheep.woodexpanded.item;
 
 import net.crownsheep.woodexpanded.WoodExpended;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

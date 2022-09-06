@@ -22,7 +22,7 @@ public class ModVillagers {
             DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, WoodExpended.MOD_ID);
 
     public static final RegistryObject<PoiType> WOODCUTTER_POI = POI_TYPES.register("woodcutter_poi",
-            () -> new PoiType(ImmutableSet.copyOf(ModBlocks.WOODCUTTER.get().getStateDefinition().getPossibleStates()),
+            () -> new PoiType(ImmutableSet.copyOf(ModBlocks.BLANK_PLANKS.get().getStateDefinition().getPossibleStates()),
                     1, 1));
 
     public static final RegistryObject<VillagerProfession> CARPENTER = VILLAGER_PROFESSIONS.register("carpenter",

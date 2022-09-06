@@ -3,11 +3,15 @@ package net.crownsheep.woodexpanded;
 import com.mojang.logging.LogUtils;
 import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
+import net.crownsheep.woodexpanded.effect.ModEffects;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
 import net.crownsheep.woodexpanded.screen.WoodcutterScreen;
 import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.crownsheep.woodexpanded.villager.ModVillagers;
+import net.crownsheep.woodexpanded.world.biomemods.ModBiomeModifiers;
+import net.crownsheep.woodexpanded.world.feature.ModConfiguredFeatures;
+import net.crownsheep.woodexpanded.world.feature.ModPlacedFeatures;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -31,9 +35,9 @@ public class WoodExpended
     public WoodExpended() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModBlocks.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         ModVillagers.register(modEventBus);
 
@@ -42,6 +46,15 @@ public class WoodExpended
         ModSounds.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
+
+        ModConfiguredFeatures.register(modEventBus);
+
+        ModBiomeModifiers.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
+
+
+        ModEffects.register(modEventBus);
+
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -62,8 +75,9 @@ public class WoodExpended
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.WOODCUTTER.get(), RenderType.cutout());
 
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_LEAVES.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_SAPLING.get(), RenderType.cutout());
         }
     }
 }
