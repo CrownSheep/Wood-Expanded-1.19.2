@@ -1,6 +1,8 @@
 package net.crownsheep.woodexpanded.item;
 
 import net.crownsheep.woodexpanded.WoodExpended;
+import net.crownsheep.woodexpanded.item.custom.EightBallItem;
+import net.crownsheep.woodexpanded.item.custom.PineconeItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

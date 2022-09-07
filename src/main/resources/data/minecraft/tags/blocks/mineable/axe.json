@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "woodexpanded:blank_wood",
-    "woodexpanded:old_wood",
+    "woodexpanded:blank_planks",
+    "woodexpanded:old_planks",
     "woodexpanded:blue_planks",
     "woodexpanded:green_planks",
     "woodexpanded:red_planks",
@@ -11,11 +11,18 @@
     "woodexpanded:light_blue_planks",
     "woodexpanded:pink_planks",
     "woodexpanded:purple_planks",
-    "woodexpanded:woodcutter",
     "woodexpanded:pine_log",
     "woodexpanded:pine_planks",
     "woodexpanded:pine_wood",
     "woodexpanded:stripped_pine_log",
-    "woodexpanded:stripped_pine_wood"
+    "woodexpanded:stripped_pine_wood",
+    "woodexpanded:oak_table",
+    "woodexpanded:birch_table",
+    "woodexpanded:spruce_table",
+    "woodexpanded:dark_oak_table",
+    "woodexpanded:mangrove_table",
+    "woodexpanded:jungle_table",
+    "woodexpanded:acacia_table",
+    "woodexpanded:pine_table"
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "woodexpanded:block/deepslate_oak_chip_ore"
+  }
+}

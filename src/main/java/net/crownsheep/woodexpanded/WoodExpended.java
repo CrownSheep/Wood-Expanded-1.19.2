@@ -47,11 +47,8 @@ public class WoodExpended
 
         ModMenuTypes.register(modEventBus);
 
-        ModConfiguredFeatures.register(modEventBus);
-
         ModBiomeModifiers.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
-
 
         ModEffects.register(modEventBus);
 

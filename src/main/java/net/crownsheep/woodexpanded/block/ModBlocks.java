@@ -7,7 +7,6 @@ import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.world.feature.tree.PineTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -29,11 +28,11 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, WoodExpended.MOD_ID);
 
     public static final RegistryObject<Block> OLD_PLANKS = registerBlock("old_planks",
-            () -> new OldWoodBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+            () -> new OldPlanksBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(1f)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> BLANK_PLANKS = registerBlock("blank_planks",
-            () -> new BlankWoodBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+            () -> new BlankPlanksBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> BLUE_PLANKS = registerBlock("blue_planks",
@@ -169,16 +168,6 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PINE_SAPLING = registerBlock("pine_sapling",
             () -> new SaplingBlock(new PineTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD_TAB);
-
-    public static final RegistryObject<Block> OAK_CHIP_ORE = registerBlock("oak_chip_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(6f).requiresCorrectToolForDrops(),
-                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
-
-    public static final RegistryObject<Block> DEEPSLATE_OAK_CHIP_ORE = registerBlock("deepslate_oak_chip_ore",
-            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
-                    .strength(6f).requiresCorrectToolForDrops(),
-                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
 
 
 

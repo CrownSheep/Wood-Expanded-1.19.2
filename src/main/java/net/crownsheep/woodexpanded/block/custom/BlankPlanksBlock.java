@@ -18,8 +18,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class BlankWoodBlock extends Block {
-    public BlankWoodBlock(Properties properties) {
+public class BlankPlanksBlock extends Block {
+    public BlankPlanksBlock(Properties properties) {
         super(properties);
     }
 

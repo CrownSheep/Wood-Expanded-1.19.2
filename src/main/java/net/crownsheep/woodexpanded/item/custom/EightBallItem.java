@@ -1,8 +1,11 @@
 package net.crownsheep.woodexpanded.item.custom;
 
+import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -22,11 +25,10 @@ public class EightBallItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
-            outputRandomNumber(player);
-            player.getCooldowns().addCooldown(this, 20);
+        if (!level.isClientSide()) {
+            level.playSound(null, player.blockPosition(), ModSounds.UI_WOODCUTTER_TAKE_RESULT.get(), SoundSource.BLOCKS, 1, 1);
+            player.getCooldowns().addCooldown(this, 60);
         }
-
 
         return super.use(level, player, hand);
     }
