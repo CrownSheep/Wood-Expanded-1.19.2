@@ -40,8 +40,11 @@
   "block.woodexpanded.pine_sapling": "Pine Sapling",
   "block.woodexpanded.pine_slab": "Pine Slab",
   "block.woodexpanded.pine_table": "Pine Table",
-  "block.woodexpanded.oak_chip_ore": "Oak Chip Ore",
-  "block.woodexpanded.deepslate_oak_chip_ore": "Deepslate Oak Chip Ore",
+  "block.woodexpanded.pine_pressure_plate": "Pine Pressure Plate",
+  "block.woodexpanded.pine_stairs": "Pine Stairs",
+  "block.woodexpanded.pine_fence": "Pine Fence",
+  "block.woodexpanded.pine_fence_gate": "Pine Fence Gate",
+
 
 
   "container.woodexpanded.woodcutter": "Woodcutter",

@@ -73,6 +73,7 @@ public class WoodExpended
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_DOOR.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_LEAVES.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_SAPLING.get(), RenderType.cutout());
         }
