@@ -23,6 +23,16 @@
     "woodexpanded:mangrove_table",
     "woodexpanded:jungle_table",
     "woodexpanded:acacia_table",
-    "woodexpanded:pine_table"
+    "woodexpanded:pine_table",
+    "woodexpanded:pine_wall",
+    "woodexpanded:oak_wall",
+    "woodexpanded:birch_wall",
+    "woodexpanded:spruce_wall",
+    "woodexpanded:dark_oak_wall",
+    "woodexpanded:jungle_wall",
+    "woodexpanded:acacia_wall",
+    "woodexpanded:mangrove_wall",
+    "woodexpanded:warped_wall",
+    "woodexpanded:crimson_wall"
   ]
 }

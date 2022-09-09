@@ -183,8 +183,44 @@ public class ModBlocks {
     public static final RegistryObject<Block> PINE_FENCE_GATE = registerBlock("pine_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD_TAB);
 
+    public static final RegistryObject<Block> PINE_TRAPDOOR = registerBlock("pine_trapdoor",
+            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR)), ModCreativeModeTab.WOOD_TAB);
+
     public static final RegistryObject<Block> PINE_DOOR = registerBlock("pine_door",
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PINE_WALL = registerBlock("pine_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> OAK_WALL = registerBlock("oak_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> BIRCH_WALL = registerBlock("birch_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> SPRUCE_WALL = registerBlock("spruce_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> DARK_OAK_WALL = registerBlock("dark_oak_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> JUNGLE_WALL = registerBlock("jungle_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> ACACIA_WALL = registerBlock("acacia_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MANGROVE_WALL = registerBlock("mangrove_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRIMSON_WALL = registerBlock("crimson_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> WARPED_WALL = registerBlock("warped_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CHORUS_WALL = registerBlock("chorus_wall",
+            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CHORUS_PLANT)), ModCreativeModeTab.WOOD_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
