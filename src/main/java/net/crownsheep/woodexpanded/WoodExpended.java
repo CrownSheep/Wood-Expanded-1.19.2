@@ -3,6 +3,7 @@ package net.crownsheep.woodexpanded;
 import com.mojang.logging.LogUtils;
 import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
+import net.crownsheep.woodexpanded.block.entity.ModWoodTypes;
 import net.crownsheep.woodexpanded.effect.ModEffects;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
@@ -15,6 +16,10 @@ import net.crownsheep.woodexpanded.world.feature.ModPlacedFeatures;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -46,12 +51,12 @@ public class WoodExpended
         ModSounds.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModBiomeModifiers.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
         ModEffects.register(modEventBus);
-
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -72,8 +77,6 @@ public class WoodExpended
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_DOOR.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_LEAVES.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_SAPLING.get(), RenderType.cutout());
         }

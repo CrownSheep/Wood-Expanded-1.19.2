@@ -74,12 +74,6 @@ public class ModCreativeModeTab {
             index++;
             items.set(index, new ItemStack(ModBlocks.PINE_FENCE.get()));
             index++;
-            items.set(index, new ItemStack(ModBlocks.PINE_FENCE_GATE.get()));
-            index++;
-            items.set(index, new ItemStack(ModBlocks.PINE_TRAPDOOR.get()));
-            index++;
-            items.set(index, new ItemStack(ModBlocks.PINE_DOOR.get()));
-            index++;
             items.set(index, new ItemStack(ModBlocks.PINE_LEAVES.get()));
             index++;
             items.set(index, new ItemStack(ModBlocks.PINE_SAPLING.get()));
@@ -103,8 +97,6 @@ public class ModCreativeModeTab {
             items.set(index, new ItemStack(ModBlocks.CRIMSON_WALL.get()));
             index++;
             items.set(index, new ItemStack(ModBlocks.WARPED_WALL.get()));
-            index++;
-            items.set(index, new ItemStack(ModBlocks.CHORUS_WALL.get()));
             index++;
             items.set(index, new ItemStack(ModItems.PAINT_BRUSH.get()));
             index++;

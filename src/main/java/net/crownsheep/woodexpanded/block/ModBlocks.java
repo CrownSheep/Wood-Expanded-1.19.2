@@ -2,20 +2,20 @@ package net.crownsheep.woodexpanded.block;
 
 import net.crownsheep.woodexpanded.WoodExpended;
 import net.crownsheep.woodexpanded.block.custom.*;
+import net.crownsheep.woodexpanded.block.entity.ModWoodTypes;
 import net.crownsheep.woodexpanded.item.ModCreativeModeTab;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.world.feature.tree.PineTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -180,15 +180,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> PINE_FENCE = registerBlock("pine_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD_TAB);
 
-    public static final RegistryObject<Block> PINE_FENCE_GATE = registerBlock("pine_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)), ModCreativeModeTab.WOOD_TAB);
-
-    public static final RegistryObject<Block> PINE_TRAPDOOR = registerBlock("pine_trapdoor",
-            () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_TRAPDOOR)), ModCreativeModeTab.WOOD_TAB);
-
-    public static final RegistryObject<Block> PINE_DOOR = registerBlock("pine_door",
-            () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR)), ModCreativeModeTab.WOOD_TAB);
-
     public static final RegistryObject<Block> PINE_WALL = registerBlock("pine_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD_TAB);
 
@@ -219,14 +210,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> WARPED_WALL = registerBlock("warped_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_FENCE)), ModCreativeModeTab.WOOD_TAB);
 
-    public static final RegistryObject<Block> CHORUS_WALL = registerBlock("chorus_wall",
-            () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CHORUS_PLANT)), ModCreativeModeTab.WOOD_TAB);
+    public static final RegistryObject<Block> OAK_VERTICAL_SLAB = registerBlock("oak_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> OAK_FLOWER = registerBlock("oak_flower_pot",
+            () -> new FlowerPotBlock(Blocks.SUNFLOWER, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
         return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<T> registerBlockWithoutBlockItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block,

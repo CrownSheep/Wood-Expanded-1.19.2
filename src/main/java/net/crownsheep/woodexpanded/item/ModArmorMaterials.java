@@ -15,28 +15,28 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     OAK_WOOD("oak_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
-            1F, 0.2F, () -> Ingredient.of(Blocks.OAK_PLANKS.asItem())),
+            1F, 0F, () -> Ingredient.of(Blocks.OAK_PLANKS.asItem())),
 
     BIRCH_WOOD("birch_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
-            1F, 0.2F, () -> Ingredient.of(Blocks.BIRCH_PLANKS.asItem())),
+            1F, 0F, () -> Ingredient.of(Blocks.BIRCH_PLANKS.asItem())),
 
     SPRUCE_WOOD("spruce_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
-            1F, 0.2F, () -> Ingredient.of(Blocks.SPRUCE_PLANKS.asItem())),
+            1F, 0F, () -> Ingredient.of(Blocks.SPRUCE_PLANKS.asItem())),
 
     DARK_OAK_WOOD("dark_oak_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
-            1F, 0.2F, () -> Ingredient.of(Blocks.DARK_OAK_PLANKS.asItem())),
+            1F, 0F, () -> Ingredient.of(Blocks.DARK_OAK_PLANKS.asItem())),
 
     JUNGLE_WOOD("jungle_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
-            1F, 0.2F, () -> Ingredient.of(Blocks.JUNGLE_PLANKS.asItem())),
+            1F, 0F, () -> Ingredient.of(Blocks.JUNGLE_PLANKS.asItem())),
 
     ACACIA_WOOD("acacia_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
-            1F, 0.2F, () -> Ingredient.of(Blocks.ACACIA_PLANKS.asItem())),
+            1F, 0F, () -> Ingredient.of(Blocks.ACACIA_PLANKS.asItem())),
 
     MANGROVE_WOOD("mangrove_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
-            1F, 0.2F, () -> Ingredient.of(Blocks.MANGROVE_PLANKS.asItem())),
+            1F, 0F, () -> Ingredient.of(Blocks.MANGROVE_PLANKS.asItem())),
 
     PINE_WOOD("pine_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
-            1F, 0.2F, () -> Ingredient.of(ModBlocks.PINE_PLANKS.get().asItem()));
+            1F, 0F, () -> Ingredient.of(ModBlocks.PINE_PLANKS.get().asItem()));
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;

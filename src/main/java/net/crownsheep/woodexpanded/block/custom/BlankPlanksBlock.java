@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -38,6 +39,7 @@ public class BlankPlanksBlock extends Block {
                 if (!player.isCreative()) {
                     if (itemstack.is(ModItems.BLUE_PAINT_BRUSH.get())) {
                         player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                        itemstack.hurtAndBreak(1, player, it -> it.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 }
 
@@ -52,6 +54,7 @@ public class BlankPlanksBlock extends Block {
                 if (!player.isCreative()) {
                     if (itemstack.is(ModItems.GREEN_PAINT_BRUSH.get())) {
                         player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                        itemstack.hurtAndBreak(1, player, it -> it.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 }
 
@@ -66,6 +69,7 @@ public class BlankPlanksBlock extends Block {
                 if (!player.isCreative()) {
                     if (itemstack.is(ModItems.RED_PAINT_BRUSH.get())) {
                         player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                        itemstack.hurtAndBreak(1, player, it -> it.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 }
 
@@ -80,6 +84,7 @@ public class BlankPlanksBlock extends Block {
                 if (!player.isCreative()) {
                     if (itemstack.is(ModItems.YELLOW_PAINT_BRUSH.get())) {
                         player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                        itemstack.hurtAndBreak(1, player, it -> it.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 }
 
@@ -94,6 +99,7 @@ public class BlankPlanksBlock extends Block {
                 if (!player.isCreative()) {
                     if (itemstack.is(ModItems.ORANGE_PAINT_BRUSH.get())) {
                         player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                        itemstack.hurtAndBreak(1, player, it -> it.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 }
 
@@ -108,6 +114,7 @@ public class BlankPlanksBlock extends Block {
                 if (!player.isCreative()) {
                     if (itemstack.is(ModItems.LIGHT_BLUE_PAINT_BRUSH.get())) {
                         player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                        itemstack.hurtAndBreak(1, player, it -> it.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 }
 
@@ -122,6 +129,7 @@ public class BlankPlanksBlock extends Block {
                 if (!player.isCreative()) {
                     if (itemstack.is(ModItems.PINK_PAINT_BRUSH.get())) {
                         player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                        itemstack.hurtAndBreak(1, player, it -> it.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 }
 
@@ -136,6 +144,7 @@ public class BlankPlanksBlock extends Block {
                 if (!player.isCreative()) {
                     if (itemstack.is(ModItems.PURPLE_PAINT_BRUSH.get())) {
                         player.setItemInHand(hand, new ItemStack(ModItems.PAINT_BRUSH.get()));
+                        itemstack.hurtAndBreak(1, player, it -> it.broadcastBreakEvent(player.getUsedItemHand()));
                     }
                 }
 

@@ -1,6 +1,7 @@
 package net.crownsheep.woodexpanded.item;
 
 import net.crownsheep.woodexpanded.WoodExpended;
+import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.item.custom.EightBallItem;
 import net.crownsheep.woodexpanded.item.custom.PineconeItem;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -52,6 +53,97 @@ public class ModItems {
                     new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
     public static final RegistryObject<Item> OAK_BOOTS = ITEMS.register("oak_boots",
             () -> new ArmorItem(ModArmorMaterials.OAK_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> BIRCH_HELMET = ITEMS.register("birch_helmet",
+            () -> new ArmorItem(ModArmorMaterials.BIRCH_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> BIRCH_CHESTPLATE = ITEMS.register("birch_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.BIRCH_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> BIRCH_LEGGING = ITEMS.register("birch_leggings",
+            () -> new ArmorItem(ModArmorMaterials.BIRCH_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> BIRCH_BOOTS = ITEMS.register("birch_boots",
+            () -> new ArmorItem(ModArmorMaterials.BIRCH_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> SPRUCE_HELMET = ITEMS.register("spruce_helmet",
+            () -> new ArmorItem(ModArmorMaterials.SPRUCE_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> SPRUCE_CHESTPLATE = ITEMS.register("spruce_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.SPRUCE_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> SPRUCE_LEGGING = ITEMS.register("spruce_leggings",
+            () -> new ArmorItem(ModArmorMaterials.SPRUCE_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> SPRUCE_BOOTS = ITEMS.register("spruce_boots",
+            () -> new ArmorItem(ModArmorMaterials.SPRUCE_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> DARK_OAK_HELMET = ITEMS.register("dark_oak_helmet",
+            () -> new ArmorItem(ModArmorMaterials.DARK_OAK_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> DARK_OAK_CHESTPLATE = ITEMS.register("dark_oak_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.DARK_OAK_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> DARK_OAK_LEGGING = ITEMS.register("dark_oak_leggings",
+            () -> new ArmorItem(ModArmorMaterials.DARK_OAK_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> DARK_OAK_BOOTS = ITEMS.register("dark_oak_boots",
+            () -> new ArmorItem(ModArmorMaterials.DARK_OAK_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> JUNGLE_HELMET = ITEMS.register("jungle_helmet",
+            () -> new ArmorItem(ModArmorMaterials.JUNGLE_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> JUNGLE_CHESTPLATE = ITEMS.register("jungle_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.JUNGLE_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> JUNGLE_LEGGING = ITEMS.register("jungle_leggings",
+            () -> new ArmorItem(ModArmorMaterials.JUNGLE_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> JUNGLE_BOOTS = ITEMS.register("jungle_boots",
+            () -> new ArmorItem(ModArmorMaterials.JUNGLE_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> ACACIA_HELMET = ITEMS.register("acacia_helmet",
+            () -> new ArmorItem(ModArmorMaterials.ACACIA_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> ACACIA_CHESTPLATE = ITEMS.register("acacia_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.ACACIA_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> ACACIA_LEGGING = ITEMS.register("acacia_leggings",
+            () -> new ArmorItem(ModArmorMaterials.ACACIA_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> ACACIA_BOOTS = ITEMS.register("acacia_boots",
+            () -> new ArmorItem(ModArmorMaterials.ACACIA_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> MANGROVE_HELMET = ITEMS.register("mangrove_helmet",
+            () -> new ArmorItem(ModArmorMaterials.MANGROVE_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> MANGROVE_CHESTPLATE = ITEMS.register("mangrove_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.MANGROVE_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> MANGROVE_LEGGING = ITEMS.register("mangrove_leggings",
+            () -> new ArmorItem(ModArmorMaterials.MANGROVE_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> MANGROVE_BOOTS = ITEMS.register("mangrove_boots",
+            () -> new ArmorItem(ModArmorMaterials.MANGROVE_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> PINE_HELMET = ITEMS.register("pine_helmet",
+            () -> new ArmorItem(ModArmorMaterials.PINE_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> PINE_CHESTPLATE = ITEMS.register("pine_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.PINE_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> PINE_LEGGING = ITEMS.register("pine_leggings",
+            () -> new ArmorItem(ModArmorMaterials.PINE_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> PINE_BOOTS = ITEMS.register("pine_boots",
+            () -> new ArmorItem(ModArmorMaterials.PINE_WOOD, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
 
 
