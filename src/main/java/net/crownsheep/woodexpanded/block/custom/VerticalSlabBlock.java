@@ -15,10 +15,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -49,20 +46,24 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock implements Sim
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        switch (pState.getValue(FACING)) {
-            case EAST:
-                return EAST_AABB;
-            case WEST:
-                return WEST_AABB;
-            case SOUTH:
-                return SOUTH_AABB;
-            default:
-                return NORTH_AABB;
-        }
+            switch (pState.getValue(FACING)) {
+                case EAST:
+                    return EAST_AABB;
+                case WEST:
+                    return WEST_AABB;
+                case SOUTH:
+                    return SOUTH_AABB;
+                default:
+                    return NORTH_AABB;
+            }
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext p_57070_) {
-        return this.defaultBlockState().setValue(FACING, p_57070_.getHorizontalDirection().getOpposite());
+        if(!p_57070_.getClickedPos().equals(Blocks.AIR)) {
+            return this.defaultBlockState().setValue(FACING, p_57070_.getHorizontalDirection().getOpposite());
+        } else {
+            return this.defaultBlockState().setValue(FACING, p_57070_.getHorizontalDirection());
+        }
     }
 
 

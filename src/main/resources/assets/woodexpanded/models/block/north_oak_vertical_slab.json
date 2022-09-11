@@ -1,12 +1,12 @@
 {
   "credit": "Made with Blockbench",
   "textures": {
-    "0": "block/oak_planks",
-    "particle": "block/oak_planks"
+    "0": "minecraft:block/oak_planks",
+    "particle": "minecraft:block/oak_planks"
   },
   "elements": [
     {
-      "from": [8, 0, 0],
+      "from": [0, 0, 8],
       "to": [16, 16, 16],
       "faces": {
         "north": {"uv": [0, 0, 16, 16], "texture": "#0"},

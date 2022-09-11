@@ -13,12 +13,17 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -213,8 +218,80 @@ public class ModBlocks {
     public static final RegistryObject<Block> OAK_VERTICAL_SLAB = registerBlock("oak_vertical_slab",
             () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
-    public static final RegistryObject<Block> OAK_FLOWER = registerBlock("oak_flower_pot",
-            () -> new FlowerPotBlock(Blocks.SUNFLOWER, BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+    public static final RegistryObject<Block> BIRCH_VERTICAL_SLAB = registerBlock("birch_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> SPRUCE_VERTICAL_SLAB = registerBlock("spruce_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> DARK_OAK_VERTICAL_SLAB = registerBlock("dark_oak_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> JUNGLE_VERTICAL_SLAB = registerBlock("jungle_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> ACACIA_VERTICAL_SLAB = registerBlock("acacia_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MANGROVE_VERTICAL_SLAB = registerBlock("mangrove_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PINE_VERTICAL_SLAB = registerBlock("pine_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(ModBlocks.PINE_PLANKS.get())), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_OAK_PLANKS = registerBlock("mossy_oak_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_BIRCH_PLANKS = registerBlock("mossy_birch_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_SPRUCE_PLANKS = registerBlock("mossy_spruce_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_DARK_OAK_PLANKS = registerBlock("mossy_dark_oak_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_JUNGLE_PLANKS = registerBlock("mossy_jungle_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_ACACIA_PLANKS = registerBlock("mossy_acacia_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_MANGROVE_PLANKS = registerBlock("mossy_mangrove_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_PINE_PLANKS = registerBlock("mossy_pine_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(ModBlocks.PINE_PLANKS.get())), ModCreativeModeTab.WOOD_TAB);
+    public static final RegistryObject<Block> CRACKED_OAK_PLANKS = registerBlock("cracked_oak_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_BIRCH_PLANKS = registerBlock("cracked_birch_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_SPRUCE_PLANKS = registerBlock("cracked_spruce_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_DARK_OAK_PLANKS = registerBlock("cracked_dark_oak_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    @Mod.EventBusSubscriber(value = Dist.CLIENT, modid=WoodExpended.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    private static class ClientHandler
+    {
+
+        private static final ColorResolver COLOR_RESOLVER = (biome, x, z) -> biome.getFoliageColor();
+
+        @SubscribeEvent
+        static void registerColorResolver(RegisterColorHandlersEvent.ColorResolvers event)
+        {
+            event.register(COLOR_RESOLVER);
+        }
+
+        @SubscribeEvent
+        static void registerBlockColor(RegisterColorHandlersEvent.Block event)
+        {
+            event.register(((state, btGetter, pos, tintIndex) -> btGetter == null || pos == null ? 6 : btGetter.getBlockTint(pos, COLOR_RESOLVER)), PINE_LEAVES.get());
+        }
+    }
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
