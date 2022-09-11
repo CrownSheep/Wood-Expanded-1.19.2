@@ -33,7 +33,7 @@ import org.slf4j.Logger;
 @Mod(WoodExpended.MOD_ID)
 public class WoodExpended
 {
-    public static final String MOD_ID = "woodexpande";
+    public static final String MOD_ID = "woodexpanded";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     // Very Important Comment
