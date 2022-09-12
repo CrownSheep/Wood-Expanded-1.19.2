@@ -40,6 +40,8 @@ public class ModCreativeModeTab {
             index++;
             items.set(index, new ItemStack(ModBlocks.OLD_PLANKS.get()));
             index++;
+            items.set(index, new ItemStack(ModBlocks.WOODCUTTER.get()));
+            index++;
             items.set(index, new ItemStack(ModBlocks.OAK_TABLE.get()));
             index++;
             items.set(index, new ItemStack(ModBlocks.BIRCH_TABLE.get()));

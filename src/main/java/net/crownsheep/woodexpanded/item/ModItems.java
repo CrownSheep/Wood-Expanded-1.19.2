@@ -2,6 +2,7 @@ package net.crownsheep.woodexpanded.item;
 
 import net.crownsheep.woodexpanded.WoodExpended;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -142,6 +143,10 @@ public class ModItems {
     public static final RegistryObject<Item> PINE_BOOTS = ITEMS.register("pine_boots",
             () -> new ArmorItem(ModArmorMaterials.PINE_WOOD, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> WOODEN_MINECART = ITEMS.register("wooden_minecart",
+            () -> new MinecartItem(AbstractMinecart.Type.RIDEABLE, new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

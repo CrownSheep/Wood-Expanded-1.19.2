@@ -8,14 +8,46 @@
   "item.woodexpanded.light_blue_paint_brush": "Light Blue Paint Brush",
   "item.woodexpanded.pink_paint_brush": "Pink Paint Brush",
   "item.woodexpanded.purple_paint_brush": "Purple Paint Brush",
+
   "item.woodexpanded.oak_helmet": "Oak Helmet",
   "item.woodexpanded.oak_boots": "Oak Boots",
   "item.woodexpanded.oak_leggings": "Oak Leggings",
   "item.woodexpanded.oak_chestplate": "Oak Chestplate",
+
   "item.woodexpanded.birch_helmet": "Birch Helmet",
   "item.woodexpanded.birch_boots": "Birch Boots",
   "item.woodexpanded.birch_leggings": "Birch Leggings",
   "item.woodexpanded.birch_chestplate": "Birch Chestplate",
+
+  "item.woodexpanded.spruce_helmet": "Spruce Helmet",
+  "item.woodexpanded.spruce_boots": "Spruce Boots",
+  "item.woodexpanded.spruce_leggings": "Spruce Leggings",
+  "item.woodexpanded.spruce_chestplate": "Spruce Chestplate",
+
+  "item.woodexpanded.dark_oak_helmet": "Dark Oak Helmet",
+  "item.woodexpanded.dark_oak_boots": "Dark Oak Boots",
+  "item.woodexpanded.dark_oak_leggings": "Dark Oak Leggings",
+  "item.woodexpanded.dark_oak_chestplate": "Dark Oak Chestplate",
+
+  "item.woodexpanded.jungle_helmet": "Jungle Helmet",
+  "item.woodexpanded.jungle_boots": "Jungle Boots",
+  "item.woodexpanded.jungle_leggings": "Jungle Leggings",
+  "item.woodexpanded.jungle_chestplate": "Jungle Chestplate",
+
+  "item.woodexpanded.acacia_helmet": "Acacia Helmet",
+  "item.woodexpanded.acacia_boots": "Acacia Boots",
+  "item.woodexpanded.acacia_leggings": "Acacia Leggings",
+  "item.woodexpanded.acacia_chestplate": "Acacia Chestplate",
+
+  "item.woodexpanded.mangrove_helmet": "Mangrove Helmet",
+  "item.woodexpanded.mangrove_boots": "Mangrove Boots",
+  "item.woodexpanded.mangrove_leggings": "Mangrove Leggings",
+  "item.woodexpanded.mangrove_chestplate": "Mangrove Chestplate",
+
+  "item.woodexpanded.pine_helmet": "Pine Helmet",
+  "item.woodexpanded.pine_boots": "Pine Boots",
+  "item.woodexpanded.pine_leggings": "Pine Leggings",
+  "item.woodexpanded.pine_chestplate": "Pine Chestplate",
 
   "block.woodexpanded.old_planks": "Old Planks",
   "block.woodexpanded.blank_planks": "Blank Planks",

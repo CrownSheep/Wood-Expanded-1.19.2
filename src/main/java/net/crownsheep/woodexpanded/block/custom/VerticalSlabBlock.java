@@ -59,11 +59,7 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock implements Sim
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext p_57070_) {
-        if(!p_57070_.getClickedPos().equals(Blocks.AIR)) {
             return this.defaultBlockState().setValue(FACING, p_57070_.getHorizontalDirection().getOpposite());
-        } else {
-            return this.defaultBlockState().setValue(FACING, p_57070_.getHorizontalDirection());
-        }
     }
 
 

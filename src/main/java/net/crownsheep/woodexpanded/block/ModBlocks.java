@@ -74,6 +74,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
+    public static final RegistryObject<Block> WOODCUTTER = registerBlock("woodcutter",
+            () -> new WoodcutterBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
+                    .strength(3.0F, 4.0F)), ModCreativeModeTab.WOOD_TAB);
+
     public static final RegistryObject<Block> OAK_TABLE = registerBlock("oak_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
@@ -289,7 +293,7 @@ public class ModBlocks {
         @SubscribeEvent
         static void registerBlockColor(RegisterColorHandlersEvent.Block event)
         {
-            event.register(((state, btGetter, pos, tintIndex) -> btGetter == null || pos == null ? 6 : btGetter.getBlockTint(pos, COLOR_RESOLVER)), PINE_LEAVES.get());
+            event.register(((state, btGetter, pos, tintIndex) -> btGetter == null || pos == null ? 0 : btGetter.getBlockTint(pos, COLOR_RESOLVER)), PINE_LEAVES.get());
         }
     }
 
