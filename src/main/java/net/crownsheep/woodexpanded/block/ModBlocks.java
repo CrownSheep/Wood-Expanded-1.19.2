@@ -2,13 +2,11 @@ package net.crownsheep.woodexpanded.block;
 
 import net.crownsheep.woodexpanded.WoodExpended;
 import net.crownsheep.woodexpanded.block.custom.*;
-import net.crownsheep.woodexpanded.block.entity.ModWoodTypes;
 import net.crownsheep.woodexpanded.item.ModCreativeModeTab;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.world.feature.tree.PineTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;

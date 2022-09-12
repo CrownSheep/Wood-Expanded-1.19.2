@@ -3,6 +3,7 @@ package net.crownsheep.woodexpanded.screen;
 import com.google.common.collect.Lists;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
 import net.crownsheep.woodexpanded.sound.ModSounds;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Container;
@@ -57,10 +58,6 @@ public class WoodcutterMenu extends AbstractContainerMenu {
     /** The inventory that stores the output of the crafting recipe. */
     final ResultContainer resultContainer = new ResultContainer();
 
-    public WoodcutterMenu(int pContainerId, Inventory pPlayerInventory) {
-        this(pContainerId, pPlayerInventory, ContainerLevelAccess.NULL);
-    }
-
     public WoodcutterMenu(int pContainerId, Inventory pPlayerInventory, final ContainerLevelAccess pAccess) {
         super(ModMenuTypes.WOODCUTTER_MENU.get(), pContainerId);
         this.access = pAccess;
@@ -105,6 +102,10 @@ public class WoodcutterMenu extends AbstractContainerMenu {
         }
 
         this.addDataSlot(this.selectedRecipeIndex);
+    }
+
+    public WoodcutterMenu(int i, Inventory inventory, FriendlyByteBuf friendlyByteBuf) {
+        this(i, inventory, ContainerLevelAccess.NULL);
     }
 
     /**

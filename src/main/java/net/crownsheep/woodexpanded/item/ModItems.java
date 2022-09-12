@@ -1,6 +1,7 @@
 package net.crownsheep.woodexpanded.item;
 
 import net.crownsheep.woodexpanded.WoodExpended;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.item.*;
@@ -144,8 +145,29 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.PINE_WOOD, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
 
-    public static final RegistryObject<Item> WOODEN_MINECART = ITEMS.register("wooden_minecart",
-            () -> new MinecartItem(AbstractMinecart.Type.RIDEABLE, new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> OAK_HORSE_ARMOR = ITEMS.register("oak_horse_armor",
+            () -> new HorseArmorItem(5, "oak", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> BIRCH_HORSE_ARMOR = ITEMS.register("birch_horse_armor",
+            () -> new HorseArmorItem(5, "birch", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> SPRUCE_HORSE_ARMOR = ITEMS.register("spruce_horse_armor",
+            () -> new HorseArmorItem(5, "spruce", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> DARK_OAK_HORSE_ARMOR = ITEMS.register("dark_oak_horse_armor",
+            () -> new HorseArmorItem(5, "dark_oak", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> JUNGLE_ARMOR = ITEMS.register("jungle_horse_armor",
+            () -> new HorseArmorItem(5, "jungle", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> ACACIA_ARMOR = ITEMS.register("acacia_horse_armor",
+            () -> new HorseArmorItem(5, "acacia", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> MANGROVE_ARMOR = ITEMS.register("mangrove_horse_armor",
+            () -> new HorseArmorItem(5, "mangrove", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> PINE_ARMOR = ITEMS.register("pine_horse_armor",
+            () -> new HorseArmorItem(5, "pine", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
 
 
     public static void register(IEventBus eventBus) {

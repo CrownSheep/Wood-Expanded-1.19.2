@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "woodexpanded:pine_log"
+    }
+  ],
+  "result": {
+    "item": "woodexpanded:pine_planks",
+    "count": 4
+  }
+}
