@@ -1,16 +1,16 @@
 {
   "variants": {
     "facing=east": {
-      "model": "woodexpanded:block/east_birch_vertical_slab"
+      "model": "woodexpanded:block/vertical_slabs/east_birch_vertical_slab"
     },
     "facing=north": {
-      "model": "woodexpanded:block/north_birch_vertical_slab"
+      "model": "woodexpanded:block/vertical_slabs/north_birch_vertical_slab"
     },
     "facing=south": {
-      "model": "woodexpanded:block/south_birch_vertical_slab"
+      "model": "woodexpanded:block/vertical_slabs/south_birch_vertical_slab"
     },
     "facing=west": {
-      "model": "woodexpanded:block/west_birch_vertical_slab"
+      "model": "woodexpanded:block/vertical_slabs/west_birch_vertical_slab"
     }
   }
 }

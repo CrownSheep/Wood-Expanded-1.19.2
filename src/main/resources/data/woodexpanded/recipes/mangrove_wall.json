@@ -3,10 +3,13 @@
   "key": {
     "#": {
       "item": "minecraft:mangrove_planks"
+    },
+    "F": {
+      "item": "minecraft:mangrove_fence"
     }
   },
   "pattern": [
-    "###",
+    "#F#",
     "###"
   ],
   "result": {

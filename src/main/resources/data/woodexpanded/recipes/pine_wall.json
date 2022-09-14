@@ -3,10 +3,13 @@
   "key": {
     "#": {
       "item": "woodexpanded:pine_planks"
+    },
+    "F": {
+      "item": "woodexpanded:pine_fence"
     }
   },
   "pattern": [
-    "###",
+    "#F#",
     "###"
   ],
   "result": {

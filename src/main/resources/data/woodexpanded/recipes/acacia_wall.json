@@ -3,10 +3,13 @@
   "key": {
     "#": {
       "item": "minecraft:acacia_planks"
+    },
+    "F": {
+      "item": "minecraft:acacia_fence"
     }
   },
   "pattern": [
-    "###",
+    "#F#",
     "###"
   ],
   "result": {

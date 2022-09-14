@@ -3,10 +3,13 @@
   "key": {
     "#": {
       "item": "minecraft:warped_planks"
+    },
+    "F": {
+      "item": "minecraft:warped_fence"
     }
   },
   "pattern": [
-    "###",
+    "#F#",
     "###"
   ],
   "result": {

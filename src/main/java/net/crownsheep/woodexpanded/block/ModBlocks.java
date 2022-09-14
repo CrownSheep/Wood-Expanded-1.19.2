@@ -236,7 +236,13 @@ public class ModBlocks {
             () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> MANGROVE_VERTICAL_SLAB = registerBlock("mangrove_vertical_slab",
-            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRIMSON_VERTICAL_SLAB = registerBlock("crimson_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> WARPED_VERTICAL_SLAB = registerBlock("warped_vertical_slab",
+            () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> PINE_VERTICAL_SLAB = registerBlock("pine_vertical_slab",
             () -> new VerticalSlabBlock(BlockBehaviour.Properties.copy(ModBlocks.PINE_PLANKS.get())), ModCreativeModeTab.WOOD_TAB);

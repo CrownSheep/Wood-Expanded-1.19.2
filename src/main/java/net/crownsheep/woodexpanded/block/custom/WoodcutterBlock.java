@@ -1,5 +1,6 @@
 package net.crownsheep.woodexpanded.block.custom;
 
+import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.screen.WoodcutterMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

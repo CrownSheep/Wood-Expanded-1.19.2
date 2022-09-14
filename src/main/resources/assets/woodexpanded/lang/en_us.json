@@ -59,9 +59,11 @@
   "block.woodexpanded.light_blue_planks": "Light Blue Planks",
   "block.woodexpanded.pink_planks": "Pink Planks",
   "block.woodexpanded.purple_planks": "Purple Planks",
+
   "block.woodexpanded.oak_wood_layer": "Oak Wood Layer",
   "block.woodexpanded.birch_wood_layer": "Birch Wood Layer",
   "block.woodexpanded.spruce_wood_layer": "Spruce Wood Layer",
+
   "block.woodexpanded.oak_table": "Oak Table",
   "block.woodexpanded.birch_table": "Birch Table",
   "block.woodexpanded.spruce_table": "Spruce Table",
@@ -69,6 +71,7 @@
   "block.woodexpanded.jungle_table": "Jungle Table",
   "block.woodexpanded.acacia_table": "Acacia Table",
   "block.woodexpanded.mangrove_table": "Mangrove Table",
+
   "block.woodexpanded.woodcutter": "Woodcutter",
   "block.woodexpanded.pine_log": "Pine Log",
   "block.woodexpanded.pine_planks": "Pine Planks",
@@ -84,14 +87,28 @@
   "block.woodexpanded.pine_stairs": "Pine Stairs",
   "block.woodexpanded.pine_fence": "Pine Fence",
   "block.woodexpanded.pine_fence_gate": "Pine Fence Gate",
+
   "block.woodexpanded.pine_wall": "Pine Wall",
   "block.woodexpanded.oak_wall": "Oak Wall",
+  "block.woodexpanded.birch_wall": "Birch Wall",
   "block.woodexpanded.spruce_wall": "Spruce Wall",
   "block.woodexpanded.dark_oak_wall": "Dark Oak Wall",
   "block.woodexpanded.jungle_wall": "Jungle Wall",
+  "block.woodexpanded.acacia_wall": "Acacia Wall",
   "block.woodexpanded.mangrove_wall": "Mangrove Wall",
   "block.woodexpanded.crimson_wall": "Crimson Wall",
   "block.woodexpanded.warped_wall": "Warped Wall",
+
+  "block.woodexpanded.oak_vertical_slab": "Oak Vertical Slab",
+  "block.woodexpanded.birch_vertical_slab": "Birch Vertical Slab",
+  "block.woodexpanded.spruce_vertical_slab": "Spruce Vertical Slab",
+  "block.woodexpanded.dark_oak_vertical_slab": "Dark Oak Vertical Slab",
+  "block.woodexpanded.jungle_vertical_slab": "Jungle Vertical Slab",
+  "block.woodexpanded.acacia_vertical_slab": "Acacia Vertical Slab",
+  "block.woodexpanded.mangrove_vertical_slab": "Mangrove Vertical Slab",
+  "block.woodexpanded.crimson_vertical_slab": "Crimson Vertical Slab",
+  "block.woodexpanded.warped_vertical_slab": "Warped Vertical Slab",
+  "block.woodexpanded.pine_vertical_slab": "Pine Vertical Slab",
 
 
 

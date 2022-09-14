@@ -114,6 +114,10 @@ public class ModCreativeModeTab {
             index++;
             items.set(index, new ItemStack(ModBlocks.MANGROVE_VERTICAL_SLAB.get()));
             index++;
+            items.set(index, new ItemStack(ModBlocks.CRIMSON_VERTICAL_SLAB.get()));
+            index++;
+            items.set(index, new ItemStack(ModBlocks.WARPED_VERTICAL_SLAB.get()));
+            index++;
             items.set(index, new ItemStack(ModBlocks.PINE_VERTICAL_SLAB.get()));
             index++;
             items.set(index, new ItemStack(ModBlocks.MOSSY_OAK_PLANKS.get()));

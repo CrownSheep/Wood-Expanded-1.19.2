@@ -3,10 +3,13 @@
   "key": {
     "#": {
       "item": "minecraft:crimson_planks"
+    },
+    "F": {
+      "item": "minecraft:crimson_fence"
     }
   },
   "pattern": [
-    "###",
+    "#F#",
     "###"
   ],
   "result": {

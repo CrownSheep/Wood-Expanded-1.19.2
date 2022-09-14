@@ -3,10 +3,13 @@
   "key": {
     "#": {
       "item": "minecraft:dark_oak_planks"
+    },
+    "F": {
+      "item": "minecraft:dark_oak_fence"
     }
   },
   "pattern": [
-    "###",
+    "#F#",
     "###"
   ],
   "result": {
