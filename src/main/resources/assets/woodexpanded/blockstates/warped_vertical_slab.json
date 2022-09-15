@@ -11,6 +11,9 @@
     },
     "facing=west": {
       "model": "woodexpanded:block/vertical_slabs/west_warped_vertical_slab"
+    },
+    "double=true": {
+      "model": "minecraft:block/warped_planks"
     }
   }
 }

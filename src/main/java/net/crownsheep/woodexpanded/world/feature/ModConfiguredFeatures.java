@@ -33,7 +33,7 @@ public class ModConfiguredFeatures {
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> PINE_TREE =
             FeatureUtils.register("pine", Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                     BlockStateProvider.simple(ModBlocks.PINE_LOG.get()),
-                    new StraightTrunkPlacer(5, 6, 3),
+                    new StraightTrunkPlacer(6, 7, 5),
                     BlockStateProvider.simple(ModBlocks.PINE_LEAVES.get()),
                     new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
                     new TwoLayersFeatureSize(1, 0, 2)).build());

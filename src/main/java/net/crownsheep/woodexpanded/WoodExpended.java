@@ -3,23 +3,17 @@ package net.crownsheep.woodexpanded;
 import com.mojang.logging.LogUtils;
 import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
-import net.crownsheep.woodexpanded.block.entity.ModWoodTypes;
-import net.crownsheep.woodexpanded.effect.ModEffects;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
-import net.crownsheep.woodexpanded.screen.WoodcutterScreen;
 import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.crownsheep.woodexpanded.villager.ModVillagers;
 import net.crownsheep.woodexpanded.world.biomemods.ModBiomeModifiers;
-import net.crownsheep.woodexpanded.world.feature.ModConfiguredFeatures;
 import net.crownsheep.woodexpanded.world.feature.ModPlacedFeatures;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.ColorResolver;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -53,10 +47,8 @@ public class WoodExpended
         ModMenuTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
 
-        ModBiomeModifiers.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
-
-        ModEffects.register(modEventBus);
+        ModBiomeModifiers.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -81,6 +73,25 @@ public class WoodExpended
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_LEAVES.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_SAPLING.get(), RenderType.cutout());
+        }
+    }
+
+    @Mod.EventBusSubscriber(value = Dist.CLIENT, modid=WoodExpended.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    private static class ClientHandler
+    {
+
+        private static final ColorResolver COLOR_RESOLVER = (biome, x, z) -> biome.getFoliageColor();
+
+        @SubscribeEvent
+        static void registerColorResolver(RegisterColorHandlersEvent.ColorResolvers event)
+        {
+            event.register(COLOR_RESOLVER);
+        }
+
+        @SubscribeEvent
+        static void registerBlockColor(RegisterColorHandlersEvent.Block event)
+        {
+            event.register(((state, btGetter, pos, tintIndex) -> btGetter == null || pos == null ? 0 : btGetter.getBlockTint(pos, COLOR_RESOLVER)), ModBlocks.PINE_LEAVES.get());
         }
     }
 }

@@ -2,37 +2,27 @@ package net.crownsheep.woodexpanded.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
-import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
-import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import javax.annotation.Nullable;
-
 public class VerticalSlabBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+    public static final BooleanProperty DOUBLE = BooleanProperty.create("double");
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     protected static final VoxelShape NORTH_AABB = Block.box(0.0D, 0.0D, 8.0D, 16.0D, 16.0D, 16.0D);
@@ -42,24 +32,33 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock implements Sim
 
     public VerticalSlabBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
-        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, Boolean.valueOf(false)));
+        this.registerDefaultState(this.defaultBlockState().setValue(DOUBLE, false).setValue(WATERLOGGED, Boolean.FALSE));
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-            switch (pState.getValue(FACING)) {
-                case EAST:
-                    return EAST_AABB;
-                case WEST:
-                    return WEST_AABB;
-                case SOUTH:
-                    return SOUTH_AABB;
-                default:
-                    return NORTH_AABB;
-            }
+        if (pState.getValue(DOUBLE)) {
+            return Shapes.block();
+        }
+        switch (pState.getValue(FACING)) {
+            case EAST:
+                return EAST_AABB;
+            case WEST:
+                return WEST_AABB;
+            case SOUTH:
+                return SOUTH_AABB;
+            default:
+                return NORTH_AABB;
+        }
     }
 
-    public BlockState getStateForPlacement(BlockPlaceContext p_57070_) {
-            return this.defaultBlockState().setValue(FACING, p_57070_.getHorizontalDirection().getOpposite());
+    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+        BlockPos blockpos = pContext.getClickedPos();
+        BlockState blockstate = pContext.getLevel().getBlockState(blockpos);
+        if (blockstate.is(this)) {
+            return blockstate.setValue(DOUBLE, true).setValue(WATERLOGGED, Boolean.valueOf(false));
+        } else {
+            return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+        }
     }
 
 
@@ -95,6 +94,6 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock implements Sim
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, WATERLOGGED);
+        pBuilder.add(DOUBLE, FACING, WATERLOGGED);
     }
 }

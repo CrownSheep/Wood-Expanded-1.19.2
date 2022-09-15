@@ -282,25 +282,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> CRACKED_DARK_OAK_PLANKS = registerBlock("cracked_dark_oak_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
-    @Mod.EventBusSubscriber(value = Dist.CLIENT, modid=WoodExpended.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    private static class ClientHandler
-    {
-
-        private static final ColorResolver COLOR_RESOLVER = (biome, x, z) -> biome.getFoliageColor();
-
-        @SubscribeEvent
-        static void registerColorResolver(RegisterColorHandlersEvent.ColorResolvers event)
-        {
-            event.register(COLOR_RESOLVER);
-        }
-
-        @SubscribeEvent
-        static void registerBlockColor(RegisterColorHandlersEvent.Block event)
-        {
-            event.register(((state, btGetter, pos, tintIndex) -> btGetter == null || pos == null ? 0 : btGetter.getBlockTint(pos, COLOR_RESOLVER)), PINE_LEAVES.get());
-        }
-    }
-
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

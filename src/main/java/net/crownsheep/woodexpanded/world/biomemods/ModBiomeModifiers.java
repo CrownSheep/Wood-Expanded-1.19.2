@@ -19,7 +19,7 @@ public class ModBiomeModifiers {
 
     public static RegistryObject<Codec<ModVegetalBiomeModifier>> VEGETAL_MODIFIER = BIOME_MODIFIERS.register("vegetal", () ->
             RecordCodecBuilder.create(builder -> builder.group(
-                    Biome.LIST_CODEC.fieldOf("biomes").forGetter(ModVegetalBiomeModifier::biomes),
+                    Biome.LIST_CODEC.fieldOf("biome").forGetter(ModVegetalBiomeModifier::biomes),
                     PlacedFeature.CODEC.fieldOf("feature").forGetter(ModVegetalBiomeModifier::feature)
             ).apply(builder, ModVegetalBiomeModifier::new)));
 

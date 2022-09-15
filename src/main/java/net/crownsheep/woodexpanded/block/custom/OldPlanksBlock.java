@@ -19,6 +19,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 
 public class OldPlanksBlock extends Block {
+
     public OldPlanksBlock(Properties properties) {
         super(properties);
     }
@@ -26,16 +27,14 @@ public class OldPlanksBlock extends Block {
 
     @Override
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
-            level.destroyBlock(pos, false);
-            level.gameEvent(null, GameEvent.BLOCK_DESTROY, pos);
-            entity.setDeltaMovement(0, -0.02, 0);
-
+        level.destroyBlock(pos, false);
+        level.gameEvent(null, GameEvent.BLOCK_DESTROY, pos);
         super.stepOn(level, pos, state, entity);
     }
 
     @Override
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
-        if(entity instanceof Arrow || entity instanceof SpectralArrow) {
+        if (entity instanceof Arrow || entity instanceof SpectralArrow) {
             level.destroyBlock(pos, false);
             level.gameEvent(null, GameEvent.BLOCK_DESTROY, pos);
         }
