@@ -72,10 +72,6 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
 
-    public static final RegistryObject<Block> WOODCUTTER = registerBlock("woodcutter",
-            () -> new WoodcutterBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
-                    .strength(3.0F, 4.0F)), ModCreativeModeTab.WOOD_TAB);
-
     public static final RegistryObject<Block> OAK_TABLE = registerBlock("oak_table",
             () -> new TableBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)), ModCreativeModeTab.WOOD_TAB);
@@ -268,19 +264,44 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOSSY_MANGROVE_PLANKS = registerBlock("mossy_mangrove_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
+    public static final RegistryObject<Block> MOSSY_CRIMSON_PLANKS = registerBlock("mossy_crimson_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MOSSY_WARPED_PLANKS = registerBlock("mossy_warped_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
     public static final RegistryObject<Block> MOSSY_PINE_PLANKS = registerBlock("mossy_pine_planks",
             () -> new Block(BlockBehaviour.Properties.copy(ModBlocks.PINE_PLANKS.get())), ModCreativeModeTab.WOOD_TAB);
+
     public static final RegistryObject<Block> CRACKED_OAK_PLANKS = registerBlock("cracked_oak_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> CRACKED_BIRCH_PLANKS = registerBlock("cracked_birch_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> CRACKED_SPRUCE_PLANKS = registerBlock("cracked_spruce_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> CRACKED_DARK_OAK_PLANKS = registerBlock("cracked_dark_oak_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_JUNGLE_PLANKS = registerBlock("cracked_jungle_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_ACACIA_PLANKS = registerBlock("cracked_acacia_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_MANGROVE_PLANKS = registerBlock("cracked_mangrove_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_CRIMSON_PLANKS = registerBlock("cracked_crimson_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_WARPED_PLANKS = registerBlock("cracked_warped_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CRACKED_PINE_PLANKS = registerBlock("cracked_pine_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(ModBlocks.PINE_PLANKS.get())), ModCreativeModeTab.WOOD_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

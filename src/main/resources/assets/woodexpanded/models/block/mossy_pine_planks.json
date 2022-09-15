@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "woodexpanded:block/cracked_pine_planks"
+    "all": "woodexpanded:block/mossy_pine_planks"
   }
 }

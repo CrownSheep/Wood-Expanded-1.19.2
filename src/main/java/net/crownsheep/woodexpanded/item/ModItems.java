@@ -1,9 +1,8 @@
 package net.crownsheep.woodexpanded.item;
 
 import net.crownsheep.woodexpanded.WoodExpended;
-import net.minecraft.resources.ResourceLocation;
+import net.crownsheep.woodexpanded.item.custom.CordMapItem;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.vehicle.AbstractMinecart;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -132,6 +131,32 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.MANGROVE_WOOD, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
 
+    public static final RegistryObject<Item> CRIMSON_HELMET = ITEMS.register("crimson_helmet",
+            () -> new ArmorItem(ModArmorMaterials.CRIMSON_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> CRIMSON_CHESTPLATE = ITEMS.register("crimson_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.CRIMSON_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> CRIMSON_LEGGINGS = ITEMS.register("crimson_leggings",
+            () -> new ArmorItem(ModArmorMaterials.CRIMSON_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> CRIMSON_BOOTS = ITEMS.register("crimson_boots",
+            () -> new ArmorItem(ModArmorMaterials.CRIMSON_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> WARPED_HELMET = ITEMS.register("warped_helmet",
+            () -> new ArmorItem(ModArmorMaterials.WARPED_WOOD, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> WARPED_CHESTPLATE = ITEMS.register("warped_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.WARPED_WOOD, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> WARPED_LEGGINGS = ITEMS.register("warped_leggings",
+            () -> new ArmorItem(ModArmorMaterials.WARPED_WOOD, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+    public static final RegistryObject<Item> WARPED_BOOTS = ITEMS.register("warped_boots",
+            () -> new ArmorItem(ModArmorMaterials.WARPED_WOOD, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
     public static final RegistryObject<Item> PINE_HELMET = ITEMS.register("pine_helmet",
             () -> new ArmorItem(ModArmorMaterials.PINE_WOOD, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
@@ -157,16 +182,16 @@ public class ModItems {
     public static final RegistryObject<Item> DARK_OAK_HORSE_ARMOR = ITEMS.register("dark_oak_horse_armor",
             () -> new HorseArmorItem(5, "dark_oak", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
 
-    public static final RegistryObject<Item> JUNGLE_ARMOR = ITEMS.register("jungle_horse_armor",
+    public static final RegistryObject<Item> JUNGLE_HORSE_ARMOR = ITEMS.register("jungle_horse_armor",
             () -> new HorseArmorItem(5, "jungle", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
 
-    public static final RegistryObject<Item> ACACIA_ARMOR = ITEMS.register("acacia_horse_armor",
+    public static final RegistryObject<Item> ACACIA_HORSE_ARMOR = ITEMS.register("acacia_horse_armor",
             () -> new HorseArmorItem(5, "acacia", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
 
-    public static final RegistryObject<Item> MANGROVE_ARMOR = ITEMS.register("mangrove_horse_armor",
+    public static final RegistryObject<Item> MANGROVE_HORSE_ARMOR = ITEMS.register("mangrove_horse_armor",
             () -> new HorseArmorItem(5, "mangrove", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
 
-    public static final RegistryObject<Item> PINE_ARMOR = ITEMS.register("pine_horse_armor",
+    public static final RegistryObject<Item> PINE_HORSE_ARMOR = ITEMS.register("pine_horse_armor",
             () -> new HorseArmorItem(5, "pine", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
 
 

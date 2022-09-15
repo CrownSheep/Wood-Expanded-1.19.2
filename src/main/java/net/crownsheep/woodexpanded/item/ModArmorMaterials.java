@@ -35,6 +35,12 @@ public enum ModArmorMaterials implements ArmorMaterial {
     MANGROVE_WOOD("mangrove_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
             1F, 0F, () -> Ingredient.of(Blocks.MANGROVE_PLANKS.asItem())),
 
+    CRIMSON_WOOD("crimson_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
+            1F, 0F, () -> Ingredient.of(Blocks.CRIMSON_PLANKS.asItem())),
+
+    WARPED_WOOD("warped_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
+            1F, 0F, () -> Ingredient.of(Blocks.WARPED_PLANKS.asItem())),
+
     PINE_WOOD("pine_wood", 28, new int[]{1, 2, 5, 3}, 19, SoundEvents.WOOD_PLACE,
             1F, 0F, () -> Ingredient.of(ModBlocks.PINE_PLANKS.get().asItem()));
 
