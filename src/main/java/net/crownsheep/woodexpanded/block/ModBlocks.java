@@ -7,6 +7,8 @@ import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.world.feature.tree.PineTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -182,6 +184,14 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> PINE_FENCE = registerBlock("pine_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PINE_BUTTON = registerBlock("pine_button",
+            () -> new ButtonBlock(true,BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON)) {
+                @Override
+                protected SoundEvent getSound(boolean pIsOn) {
+                    return SoundEvents.WOODEN_BUTTON_CLICK_ON;
+                }
+            }, ModCreativeModeTab.WOOD_TAB);
 
     public static final RegistryObject<Block> PINE_WALL = registerBlock("pine_wall",
             () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)), ModCreativeModeTab.WOOD_TAB);

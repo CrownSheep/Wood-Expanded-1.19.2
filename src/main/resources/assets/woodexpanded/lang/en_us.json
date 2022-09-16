@@ -59,6 +59,17 @@
   "item.woodexpanded.pine_leggings": "Pine Leggings",
   "item.woodexpanded.pine_chestplate": "Pine Chestplate",
 
+  "item.woodexpanded.oak_horse_armor": "Oak Horse Armor",
+  "item.woodexpanded.birch_horse_armor": "Birch Horse Armor",
+  "item.woodexpanded.spruce_horse_armor": "Spruce Horse Armor",
+  "item.woodexpanded.dark_oak_horse_armor": "Dark Oak Horse Armor",
+  "item.woodexpanded.jungle_horse_armor": "Jungle Horse Armor",
+  "item.woodexpanded.acacia_horse_armor": "Acacia Horse Armor",
+  "item.woodexpanded.mangrove_horse_armor": "Mangrove Horse Armor",
+  "item.woodexpanded.crimson_horse_armor": "Crimson Horse Armor",
+  "item.woodexpanded.warped_horse_armor": "Warped Horse Armor",
+  "item.woodexpanded.pine_horse_armor": "Pine Horse Armor",
+
   "block.woodexpanded.old_planks": "Old Planks",
   "block.woodexpanded.blank_planks": "Blank Planks",
   "block.woodexpanded.blue_planks": "Blue Planks",

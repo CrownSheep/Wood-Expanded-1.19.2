@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "woodexpanded:pine_planks"
+    }
+  },
+  "result": {
+    "item": "woodexpanded:pine_vertical_slab",
+    "count": 6
+  }
+}

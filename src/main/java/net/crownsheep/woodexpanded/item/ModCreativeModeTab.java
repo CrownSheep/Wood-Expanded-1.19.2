@@ -74,6 +74,8 @@ public class ModCreativeModeTab {
             index++;
             items.set(index, new ItemStack(ModBlocks.PINE_FENCE.get()));
             index++;
+            items.set(index, new ItemStack(ModBlocks.PINE_BUTTON.get()));
+            index++;
             items.set(index, new ItemStack(ModBlocks.PINE_LEAVES.get()));
             index++;
             items.set(index, new ItemStack(ModBlocks.PINE_SAPLING.get()));
@@ -256,19 +258,25 @@ public class ModCreativeModeTab {
             index++;
             items.set(index, new ItemStack(ModItems.PINE_BOOTS.get()));
             index++;
-            items.set(index, new ItemStack(Items.AIR));
+            items.set(index, new ItemStack(ModItems.OAK_HORSE_ARMOR.get()));
             index++;
-            items.set(index, new ItemStack(Items.AIR));
+            items.set(index, new ItemStack(ModItems.BIRCH_HORSE_ARMOR.get()));
             index++;
-            items.set(index, new ItemStack(Items.AIR));
+            items.set(index, new ItemStack(ModItems.SPRUCE_HORSE_ARMOR.get()));
             index++;
-            items.set(index, new ItemStack(Items.AIR));
+            items.set(index, new ItemStack(ModItems.DARK_OAK_HORSE_ARMOR.get()));
             index++;
-            items.set(index, new ItemStack(Items.AIR));
+            items.set(index, new ItemStack(ModItems.JUNGLE_HORSE_ARMOR.get()));
             index++;
-            items.set(index, new ItemStack(Items.AIR));
+            items.set(index, new ItemStack(ModItems.ACACIA_HORSE_ARMOR.get()));
             index++;
-            items.set(index, new ItemStack(Items.AIR));
+            items.set(index, new ItemStack(ModItems.MANGROVE_HORSE_ARMOR.get()));
+            index++;
+            items.set(index, new ItemStack(ModItems.CRIMSON_HORSE_ARMOR.get()));
+            index++;
+            items.set(index, new ItemStack(ModItems.WARPED_HORSE_ARMOR.get()));
+            index++;
+            items.set(index, new ItemStack(ModItems.PINE_HORSE_ARMOR.get()));
             //apply sort logic here
         }
     };

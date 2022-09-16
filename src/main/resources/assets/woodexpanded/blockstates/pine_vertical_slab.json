@@ -11,9 +11,6 @@
     },
     "facing=west": {
       "model": "woodexpanded:block/vertical_slabs/west_pine_vertical_slab"
-    },
-    "double=true": {
-      "model": "woodexpanded:block/pine_planks"
     }
   }
 }

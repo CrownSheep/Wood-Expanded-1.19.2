@@ -22,7 +22,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class VerticalSlabBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
-    public static final BooleanProperty DOUBLE = BooleanProperty.create("double");
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     protected static final VoxelShape NORTH_AABB = Block.box(0.0D, 0.0D, 8.0D, 16.0D, 16.0D, 16.0D);
@@ -32,13 +31,10 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock implements Sim
 
     public VerticalSlabBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
-        this.registerDefaultState(this.defaultBlockState().setValue(DOUBLE, false).setValue(WATERLOGGED, Boolean.FALSE));
+        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE));
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        if (pState.getValue(DOUBLE)) {
-            return Shapes.block();
-        }
         switch (pState.getValue(FACING)) {
             case EAST:
                 return EAST_AABB;
@@ -54,11 +50,7 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock implements Sim
     public BlockState getStateForPlacement(BlockPlaceContext pContext) {
         BlockPos blockpos = pContext.getClickedPos();
         BlockState blockstate = pContext.getLevel().getBlockState(blockpos);
-        if (blockstate.is(this)) {
-            return blockstate.setValue(DOUBLE, true).setValue(WATERLOGGED, Boolean.valueOf(false));
-        } else {
-            return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
-        }
+        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
 
@@ -94,6 +86,6 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock implements Sim
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(DOUBLE, FACING, WATERLOGGED);
+        pBuilder.add(FACING, WATERLOGGED);
     }
 }
