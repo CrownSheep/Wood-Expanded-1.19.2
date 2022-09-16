@@ -2,6 +2,8 @@ package net.crownsheep.woodexpanded.block.custom;
 
 import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -29,6 +31,7 @@ public class OldPlanksBlock extends Block {
     public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
         level.destroyBlock(pos, false);
         level.gameEvent(null, GameEvent.BLOCK_DESTROY, pos);
+        level.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.WITHER_BREAK_BLOCK, SoundSource.BLOCKS,1 ,1.5f, true);
         super.stepOn(level, pos, state, entity);
     }
 
