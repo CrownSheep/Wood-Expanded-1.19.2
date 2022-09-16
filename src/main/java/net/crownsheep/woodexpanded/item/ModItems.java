@@ -1,7 +1,6 @@
 package net.crownsheep.woodexpanded.item;
 
 import net.crownsheep.woodexpanded.WoodExpended;
-import net.crownsheep.woodexpanded.item.custom.CordMapItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -199,7 +198,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> PINE_HORSE_ARMOR = ITEMS.register("pine_horse_armor",
             () -> new HorseArmorItem(5, "pine", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

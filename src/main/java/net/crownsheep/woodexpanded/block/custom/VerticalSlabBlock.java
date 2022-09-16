@@ -7,9 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -70,6 +68,13 @@ public class VerticalSlabBlock extends HorizontalDirectionalBlock implements Sim
         }
 
         return super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
+    }
+
+    public BlockState rotate(BlockState pState, Rotation pRot) {
+        return pState.setValue(FACING, pRot.rotate(pState.getValue(FACING)));
+    }
+    public BlockState mirror(BlockState pState, Mirror pMirror) {
+        return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
     }
 
     public boolean isPathfindable(BlockState pState, BlockGetter pLevel, BlockPos pPos, PathComputationType pType) {

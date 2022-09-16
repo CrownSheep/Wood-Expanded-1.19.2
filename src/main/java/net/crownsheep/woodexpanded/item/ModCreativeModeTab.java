@@ -74,8 +74,6 @@ public class ModCreativeModeTab {
             index++;
             items.set(index, new ItemStack(ModBlocks.PINE_FENCE.get()));
             index++;
-            items.set(index, new ItemStack(ModBlocks.PINE_BUTTON.get()));
-            index++;
             items.set(index, new ItemStack(ModBlocks.PINE_LEAVES.get()));
             index++;
             items.set(index, new ItemStack(ModBlocks.PINE_SAPLING.get()));
