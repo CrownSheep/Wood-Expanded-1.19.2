@@ -11,9 +11,6 @@
     },
     "facing=west": {
       "model": "woodexpanded:block/vertical_slabs/west_oak_vertical_slab"
-    },
-    "double=true": {
-      "model": "minecraft:block/oak_planks"
     }
   }
 }

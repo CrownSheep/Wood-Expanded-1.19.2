@@ -1,4 +1,4 @@
-package net.crownsheep.woodexpanded.block.entity;
+package net.crownsheep.woodexpanded.block;
 
 import net.minecraft.world.level.block.state.properties.WoodType;
 
