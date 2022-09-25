@@ -16,6 +16,9 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> UI_WOODCUTTER_TAKE_RESULT =
             registerSoundEvent("ui_woodcutter_take_result");
 
+    public static final RegistryObject<SoundEvent> CARVING_WOOD =
+            registerSoundEvent("carving_wood");
+
     private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(WoodExpended.MOD_ID, name)));
     }

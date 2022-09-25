@@ -1,0 +1,11 @@
+{
+  "type": "woodexpanded:carving",
+  "ingredients": [
+    {
+      "item": "minecraft:oak_log"
+    }
+  ],
+  "output": {
+    "item": "minecraft:oak_planks"
+  }
+}

@@ -4,5 +4,11 @@
     "sounds": [
       "woodexpanded:ui_woodcutter_take_result"
     ]
+  },
+  "carving_wood": {
+    "subtitle": "sounds.woodexpanded.carving_wood",
+    "sounds": [
+      "woodexpanded:carving_wood"
+    ]
   }
 }

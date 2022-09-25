@@ -4,14 +4,21 @@ import com.mojang.logging.LogUtils;
 import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
 import net.crownsheep.woodexpanded.item.ModItems;
+import net.crownsheep.woodexpanded.recipe.ModRecipes;
+import net.crownsheep.woodexpanded.screen.CarvingStationScreen;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
 import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.crownsheep.woodexpanded.villager.ModVillagers;
 import net.crownsheep.woodexpanded.world.biomemods.ModBiomeModifiers;
 import net.crownsheep.woodexpanded.world.feature.ModPlacedFeatures;
+import net.minecraft.client.color.block.BlockColor;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.ColorResolver;
+import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,6 +29,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+import java.awt.*;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(WoodExpended.MOD_ID)
@@ -40,12 +49,12 @@ public class WoodExpended
 
         ModVillagers.register(modEventBus);
 
-        ModBlockEntities.register(modEventBus);
-
         ModSounds.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         ModPlacedFeatures.register(modEventBus);
         ModBiomeModifiers.register(modEventBus);
@@ -71,6 +80,8 @@ public class WoodExpended
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_LEAVES.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_SAPLING.get(), RenderType.cutout());
+
+            MenuScreens.register(ModMenuTypes.CARVING_STATION_MENU.get(), CarvingStationScreen::new);
         }
     }
 
@@ -90,6 +101,16 @@ public class WoodExpended
         static void registerBlockColor(RegisterColorHandlersEvent.Block event)
         {
             event.register(((state, btGetter, pos, tintIndex) -> btGetter == null || pos == null ? 0 : btGetter.getBlockTint(pos, COLOR_RESOLVER)), ModBlocks.PINE_LEAVES.get());
+        }
+
+
+        @SubscribeEvent
+        static void registerItemColor(RegisterColorHandlersEvent.Item event)
+        {
+            event.register((itemColor, item) -> {
+                BlockState blockstate = ((BlockItem)itemColor.getItem()).getBlock().defaultBlockState();
+                return FoliageColor.getEvergreenColor();
+            }, ModBlocks.PINE_LEAVES.get());
         }
     }
 }

@@ -196,6 +196,8 @@ public class ModItems {
     public static final RegistryObject<Item> WARPED_HORSE_ARMOR = ITEMS.register("warped_horse_armor",
             () -> new HorseArmorItem(5, "warped", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
 
+    public static final RegistryObject<Item> KNIFE = ITEMS.register("knife",
+            () -> new SwordItem(Tiers.IRON, -2, -3, new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1).defaultDurability(100)));
     public static final RegistryObject<Item> PINE_HORSE_ARMOR = ITEMS.register("pine_horse_armor",
             () -> new HorseArmorItem(5, "pine", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
     public static void register(IEventBus eventBus) {

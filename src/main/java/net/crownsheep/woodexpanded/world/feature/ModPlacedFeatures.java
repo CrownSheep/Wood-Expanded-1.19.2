@@ -18,7 +18,6 @@ public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, WoodExpended.MOD_ID);
 
-
     public static final RegistryObject<PlacedFeature> PINE_PLACED = PLACED_FEATURES.register("pine_placed",
             () -> new PlacedFeature((Holder<ConfiguredFeature<?,?>>)(Holder<? extends ConfiguredFeature<?,?>>)
                     ModConfiguredFeatures.PINE_SPAWN, VegetationPlacements.treePlacement(

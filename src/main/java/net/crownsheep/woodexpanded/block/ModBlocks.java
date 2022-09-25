@@ -298,8 +298,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CRACKED_PINE_PLANKS = registerBlock("cracked_pine_planks",
             () -> new Block(BlockBehaviour.Properties.copy(ModBlocks.PINE_PLANKS.get())), ModCreativeModeTab.WOOD_TAB);
 
-    public static final RegistryObject<Block> CREATE = registerBlock("create",
-            () -> new CreateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+    public static final RegistryObject<Block> CARVING_STATION = registerBlock("carving_station",
+            () -> new CarvingStationBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
