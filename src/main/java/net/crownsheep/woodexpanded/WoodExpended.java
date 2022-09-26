@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
 import net.crownsheep.woodexpanded.item.ModItems;
+import net.crownsheep.woodexpanded.networking.ModMessages;
 import net.crownsheep.woodexpanded.recipe.ModRecipes;
 import net.crownsheep.woodexpanded.screen.CarvingStationScreen;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
@@ -67,6 +68,7 @@ public class WoodExpended
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            ModMessages.register();
             ModVillagers.registerPOIs();
         });
     }
