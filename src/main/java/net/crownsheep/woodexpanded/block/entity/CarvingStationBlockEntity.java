@@ -5,6 +5,7 @@ import net.crownsheep.woodexpanded.networking.ModMessages;
 import net.crownsheep.woodexpanded.networking.packet.ItemStackSyncS2CPacket;
 import net.crownsheep.woodexpanded.recipe.CarvingStationRecipe;
 import net.crownsheep.woodexpanded.screen.CarvingStationMenu;
+import net.crownsheep.woodexpanded.screen.CarvingStationScreen;
 import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -34,13 +35,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class CarvingStationBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(0) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
-            if(!level.isClientSide()) {
-                ModMessages.sendToClients(new ItemStackSyncS2CPacket(this, worldPosition));
-            }
         }
     };
 
@@ -48,7 +46,9 @@ public class CarvingStationBlockEntity extends BlockEntity implements MenuProvid
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 278;
+    private int maxProgress = 178;
+
+    static int time;
 
 
     public CarvingStationBlockEntity(BlockPos pos, BlockState state) {
@@ -73,15 +73,9 @@ public class CarvingStationBlockEntity extends BlockEntity implements MenuProvid
 
             @Override
             public int getCount() {
-                return 2;
+                return 0;
             }
         };
-    }
-
-    public ItemStack getRenderStack() {
-        ItemStack stack;
-        stack = itemHandler.getStackInSlot(2);
-        return stack;
     }
 
     public void setHandler(ItemStackHandler itemStackHandler) {
@@ -149,12 +143,28 @@ public class CarvingStationBlockEntity extends BlockEntity implements MenuProvid
             return;
         }
 
+        time++;
+
+        if(CarvingStationScreen.countsta == 0 && time >= 80) {
+            CarvingStationScreen.countsta = 1;
+            time = 0;
+        }
+
+        if(CarvingStationScreen.countsta == 1 && time >= 80) {
+            CarvingStationScreen.countsta = 0;
+            time = 0;
+        }
+
+        if(!level.isClientSide()) {
+            ModMessages.sendToClients(new ItemStackSyncS2CPacket(pEntity.itemHandler, pos));
+        }
+
         if(hasRecipe(pEntity)) {
             pEntity.progress++;
             setChanged(level, pos, state);
             if(RandomUtils.nextInt(0,20) == 5) {
                 assert pEntity.level != null;
-                pEntity.level.playSound(null, pos, ModSounds.CARVING_WOOD.get(), SoundSource.BLOCKS, 1, RandomUtils.nextFloat(0.8f, 1.2f));
+                pEntity.level.playSound(null, pos, ModSounds.CARVING_WOOD.get(), SoundSource.BLOCKS, RandomUtils.nextFloat(0.55f, 0.9f), RandomUtils.nextFloat(0.8f, 1.2f));
             }
             if(pEntity.progress >= pEntity.maxProgress) {
                 craftItem(pEntity);

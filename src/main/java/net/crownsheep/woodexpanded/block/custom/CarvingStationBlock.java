@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
@@ -31,8 +32,12 @@ public class CarvingStationBlock extends BaseEntityBlock {
         super(properties);
     }
 
-    private static final VoxelShape SHAPE =
-            Block.box(0, 0, 0, 16, 10, 16);
+    protected static final VoxelShape BASE = Block.box(0.0D, 8.0D, 0.0D, 16.0D, 11.0D, 16.0D);
+    protected static final VoxelShape LEG1 = Block.box(1.0D, 0.0D, 1.0D, 3.0D, 10.0D, 3.0D);
+    protected static final VoxelShape LEG2 = Block.box(1.0D, 0.0D, 13.0D, 3.0D, 10.0D, 15.0D);
+    protected static final VoxelShape LEG3 = Block.box(13.0D, 0.0D, 13.0D, 15.0D, 10.0D, 15.0D);
+    protected static final VoxelShape LEG4 = Block.box(13.0D, 0.0D, 1.0D, 15.0D, 10.0D, 3.0D);
+    protected static final VoxelShape SHAPE = Shapes.or(BASE, LEG1, LEG2, LEG3, LEG4);
 
     @Override
     public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "woodexpanded:block/pig_statue",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "woodexpanded:block/pig_statue"
+    },
+    "facing=south": {
+      "model": "woodexpanded:block/pig_statue",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "woodexpanded:block/pig_statue",
+      "y": 270
+    }
+  }
+}

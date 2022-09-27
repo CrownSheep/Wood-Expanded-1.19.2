@@ -301,6 +301,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> CARVING_STATION = registerBlock("carving_station",
             () -> new CarvingStationBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
 
+    public static final RegistryObject<Block> COW_STATUE = registerBlock("cow_statue",
+            () -> new CowStatue(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PIG_STATUE = registerBlock("pig_statue",
+            () -> new PigStatue(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
