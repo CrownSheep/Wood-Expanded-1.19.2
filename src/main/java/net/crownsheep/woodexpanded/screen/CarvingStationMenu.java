@@ -5,6 +5,7 @@ import net.crownsheep.woodexpanded.block.entity.CarvingStationBlockEntity;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.screen.slot.KnifeSlot;
 import net.crownsheep.woodexpanded.screen.slot.ModResultSlot;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -12,6 +13,7 @@ import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -21,18 +23,17 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.Objects;
 
 public class CarvingStationMenu extends AbstractContainerMenu {
-
     public final CarvingStationBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
     public CarvingStationMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(1));
     }
 
     public CarvingStationMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(ModMenuTypes.CARVING_STATION_MENU.get(), id);
-        checkContainerSize(inv, 3);
+        checkContainerSize(inv, 1);
         blockEntity = (CarvingStationBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -41,22 +42,10 @@ public class CarvingStationMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-
+            this.addSlot(new ModResultSlot(handler, 0, 80, 67));
         });
 
         addDataSlots(data);
-    }
-
-    public boolean isCrafting() {
-        return data.get(0) > 0;
-    }
-
-    public int getScaledProgress() {
-        int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 28; // This is the height in pixels of your arrow
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -79,46 +68,7 @@ public class CarvingStationMenu extends AbstractContainerMenu {
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
-        Slot sourceSlot = slots.get(index);
-        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
-        ItemStack sourceStack = sourceSlot.getItem();
-        ItemStack copyOfSourceStack = sourceStack.copy();
-
-        // Check if the slot clicked is one of the vanilla container slots
-        if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            // This is a vanilla container slot so merge the stack into the tile inventory
-            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
-                    + TE_INVENTORY_SLOT_COUNT, false)) {
-                return ItemStack.EMPTY;  // EMPTY_ITEM
-            }
-        } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
-            // This is a TE slot so merge the stack into the players inventory
-            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
-                return ItemStack.EMPTY;
-            }
-        } else {
-            System.out.println("Invalid slotIndex:" + index);
-            return ItemStack.EMPTY;
-        }
-        // If stack size == 0 (the entire stack was moved) set slot contents to null
-        if (sourceStack.getCount() == 0) {
-            sourceSlot.set(ItemStack.EMPTY);
-        } else {
-            sourceSlot.setChanged();
-        }
-        sourceSlot.onTake(playerIn, sourceStack);
-        return copyOfSourceStack;
-    }
-
-    public boolean isKnife(ItemStack pStack) {
-        if (Objects.equals(pStack, new ItemStack(ModItems.KNIFE.get())))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return ItemStack.EMPTY;
     }
 
     @Override
@@ -139,5 +89,9 @@ public class CarvingStationMenu extends AbstractContainerMenu {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
         }
+    }
+
+    public void item() {
+        this.setItem(0, 1, new ItemStack(Blocks.OAK_PLANKS, 2));
     }
 }

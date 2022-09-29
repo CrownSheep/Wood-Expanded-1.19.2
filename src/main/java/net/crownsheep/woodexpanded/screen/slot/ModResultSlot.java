@@ -1,5 +1,6 @@
 package net.crownsheep.woodexpanded.screen.slot;
 
+import net.crownsheep.woodexpanded.block.entity.CarvingStationBlockEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
@@ -14,5 +15,10 @@ public class ModResultSlot extends SlotItemHandler {
     @Override
     public boolean mayPlace(@NotNull ItemStack stack) {
         return false;
+    }
+
+    @Override
+    public boolean mayPickup(Player playerIn) {
+        return CarvingStationBlockEntity.mayPickup;
     }
 }

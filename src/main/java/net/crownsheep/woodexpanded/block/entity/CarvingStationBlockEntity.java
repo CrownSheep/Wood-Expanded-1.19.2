@@ -21,6 +21,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -35,7 +36,12 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class CarvingStationBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(0) {
+
+    public static boolean carve;
+    public static boolean mayPickup;
+
+    public static ItemStack slotStack;
+    public final ItemStackHandler itemHandler = new ItemStackHandler(1) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -47,8 +53,6 @@ public class CarvingStationBlockEntity extends BlockEntity implements MenuProvid
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 178;
-
-    static int time;
 
 
     public CarvingStationBlockEntity(BlockPos pos, BlockState state) {
@@ -73,7 +77,7 @@ public class CarvingStationBlockEntity extends BlockEntity implements MenuProvid
 
             @Override
             public int getCount() {
-                return 0;
+                return 1;
             }
         };
     }
@@ -86,7 +90,7 @@ public class CarvingStationBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("blockentity.woodexpanded.carving_station");
+        return Component.literal("");
     }
 
     @org.jetbrains.annotations.Nullable
@@ -97,7 +101,7 @@ public class CarvingStationBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             return lazyItemHandler.cast();
         }
 
@@ -139,83 +143,43 @@ public class CarvingStationBlockEntity extends BlockEntity implements MenuProvid
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, CarvingStationBlockEntity pEntity) {
-        if(level.isClientSide()) {
+        if (level.isClientSide()) {
             return;
         }
 
-        time++;
-
-        if(CarvingStationScreen.countsta == 0 && time >= 80) {
-            CarvingStationScreen.countsta = 1;
-            time = 0;
+        if (pEntity.itemHandler.getStackInSlot(0).isEmpty()) {
+            carve = false;
         }
 
-        if(CarvingStationScreen.countsta == 1 && time >= 80) {
-            CarvingStationScreen.countsta = 0;
-            time = 0;
+        if (slotStack != null) {
+            pEntity.itemHandler.setStackInSlot(0, slotStack);
         }
 
-        if(!level.isClientSide()) {
+        if (!carve) {
+            mayPickup = false;
+            if (CarvingStationScreen.countsta == 0) {
+                slotStack = new ItemStack(Blocks.OAK_PLANKS, 2);
+            }
+            if (CarvingStationScreen.countsta == 1) {
+                slotStack = new ItemStack(Blocks.OAK_PLANKS, 1);
+            }
+            if (CarvingStationScreen.countsta == 2) {
+                slotStack = new ItemStack(Blocks.OAK_PLANKS, 1);
+            }
+            if (CarvingStationScreen.countsta == 3) {
+                slotStack = new ItemStack(Blocks.OAK_PLANKS, 2);
+            }
+        }
+
+        if (!level.isClientSide()) {
             ModMessages.sendToClients(new ItemStackSyncS2CPacket(pEntity.itemHandler, pos));
         }
-
-        if(hasRecipe(pEntity)) {
-            pEntity.progress++;
-            setChanged(level, pos, state);
-            if(RandomUtils.nextInt(0,20) == 5) {
-                assert pEntity.level != null;
-                pEntity.level.playSound(null, pos, ModSounds.CARVING_WOOD.get(), SoundSource.BLOCKS, RandomUtils.nextFloat(0.55f, 0.9f), RandomUtils.nextFloat(0.8f, 1.2f));
-            }
-            if(pEntity.progress >= pEntity.maxProgress) {
-                craftItem(pEntity);
-            }
-        } else {
-            pEntity.resetProgress();
-            setChanged(level, pos, state);
-        }
-    }
-
-    private void resetProgress() {
-        this.progress = 0;
-    }
-
-    private static void craftItem(CarvingStationBlockEntity pEntity) {
-        Level level = pEntity.level;
-        SimpleContainer inventory = new SimpleContainer(pEntity.itemHandler.getSlots());
-        for (int i = 0; i < pEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, pEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<CarvingStationRecipe> recipe = level.getRecipeManager()
-                .getRecipeFor(CarvingStationRecipe.Type.INSTANCE, inventory, level);
-
-        if(hasRecipe(pEntity)) {
-            pEntity.itemHandler.extractItem(1, 1, false);
-            pEntity.itemHandler.setStackInSlot(2, new ItemStack(recipe.get().getResultItem().getItem(),
-                    pEntity.itemHandler.getStackInSlot(2).getCount() + 1));
-
-            pEntity.resetProgress();
-        }
-    }
-
-    private static boolean hasRecipe(CarvingStationBlockEntity entity) {
-        Level level = entity.level;
-        SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
-        for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<CarvingStationRecipe> recipe = level.getRecipeManager()
-                .getRecipeFor(CarvingStationRecipe.Type.INSTANCE, inventory, level);
-
-
-        return recipe.isPresent() && hasKnifeInFirstSlot(inventory) && canInsertAmountIntoOutputSlot(inventory) &&
-                canInsertItemIntoOutputSlot(inventory, recipe.get().getResultItem());
     }
 
     private static boolean hasKnifeInFirstSlot(SimpleContainer inventory) {
         return inventory.getItem(0).getItem() == ModItems.KNIFE.get();
     }
+
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack stack) {
         return inventory.getItem(2).getItem() == stack.getItem() || inventory.getItem(2).isEmpty();
     }

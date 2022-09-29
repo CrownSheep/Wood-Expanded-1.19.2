@@ -10,9 +10,8 @@ import net.crownsheep.woodexpanded.screen.CarvingStationScreen;
 import net.crownsheep.woodexpanded.screen.ModMenuTypes;
 import net.crownsheep.woodexpanded.sound.ModSounds;
 import net.crownsheep.woodexpanded.villager.ModVillagers;
-import net.crownsheep.woodexpanded.world.biomemods.ModBiomeModifiers;
+import net.crownsheep.woodexpanded.world.feature.ModConfiguredFeatures;
 import net.crownsheep.woodexpanded.world.feature.ModPlacedFeatures;
-import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -30,8 +29,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
-import java.awt.*;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(WoodExpended.MOD_ID)
@@ -57,8 +54,8 @@ public class WoodExpended
 
         ModRecipes.register(modEventBus);
 
+        ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
-        ModBiomeModifiers.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);

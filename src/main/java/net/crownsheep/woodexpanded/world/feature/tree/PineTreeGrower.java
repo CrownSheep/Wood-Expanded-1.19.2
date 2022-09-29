@@ -10,10 +10,9 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class PineTreeGrower extends AbstractTreeGrower {
-
-    @org.jetbrains.annotations.Nullable
+    @Nullable
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource pRandom, boolean pLargeHive) {
-        return ModConfiguredFeatures.PINE_SPAWN;
+        return ModConfiguredFeatures.PINE.getHolder().get();
     }
 }

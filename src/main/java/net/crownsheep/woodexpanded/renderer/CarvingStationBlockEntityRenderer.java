@@ -48,7 +48,15 @@ public class CarvingStationBlockEntityRenderer implements BlockEntityRenderer<Ca
         ItemRenderer itemRenderer = Minecraft.getInstance().getItemRenderer();
         ItemStack resultStack = CarvingStationScreen.statues[CarvingStationScreen.countsta];
         pPoseStack.pushPose();
-        pPoseStack.translate(0.3f, 0.875f, 0.4f);
+        if(CarvingStationScreen.countsta == 2) {
+            pPoseStack.translate(0.3f, 0.887f, 0.4f);
+        }
+        if(CarvingStationScreen.countsta == 3) {
+            pPoseStack.translate(0.3f, 0.92f, 0.4f);
+        }
+        if(CarvingStationScreen.countsta != 2 && CarvingStationScreen.countsta != 3) {
+            pPoseStack.translate(0.3f, 0.875f, 0.4f);
+        }
         pPoseStack.scale(0.75f, 0.75f, 0.75f);
 
         switch (pBlockEntity.getBlockState().getValue(CarvingStationBlock.FACING)) {

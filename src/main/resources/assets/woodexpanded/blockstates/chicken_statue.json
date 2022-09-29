@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "woodexpanded:block/chicken_statue",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "woodexpanded:block/chicken_statue"
+    },
+    "facing=south": {
+      "model": "woodexpanded:block/chicken_statue",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "woodexpanded:block/chicken_statue",
+      "y": 270
+    }
+  }
+}
