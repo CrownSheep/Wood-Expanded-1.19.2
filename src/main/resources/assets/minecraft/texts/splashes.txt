@@ -18,7 +18,7 @@ Indev!
 Spiders everywhere!
 Check it out!
 Holy cow, man!
-Wood!!!!!!!!!!!!!!!!!!!!!!!!!
+Wood!!!!!!!!!!!!!!!!!
 It's a game!
 Made in Sweden!
 Uses LWJGL!
@@ -27,6 +27,7 @@ Minecraft!
 Yaaay!
 Singleplayer!
 There is a mod called Wood Expanded and you should try it!
+Why!
 Keyboard compatible!
 Ingots!
 Exploding creepers!

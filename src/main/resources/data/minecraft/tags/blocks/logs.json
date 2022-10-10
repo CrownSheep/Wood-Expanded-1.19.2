@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#woodexpanded:pine_logs"
+    "#woodexpanded:pine_logs",
+    "#woodexpanded:purpur_logs"
   ]
 }

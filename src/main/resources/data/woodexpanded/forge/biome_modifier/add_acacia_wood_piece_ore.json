@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#woodexpanded:is_acacia",
+  "features": "woodexpanded:acacia_wood_piece_ore_placed",
+  "step": "underground_ores"
+}

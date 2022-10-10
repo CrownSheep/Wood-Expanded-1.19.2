@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "woodexpanded:block/spruce_wood_piece_ore"
+  }
+}

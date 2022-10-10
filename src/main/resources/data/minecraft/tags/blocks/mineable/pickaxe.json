@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
-
+    "woodexpanded:oak_wood_piece_ore",
+    "woodexpanded:birch_wood_piece_ore",
+    "woodexpanded:spruce_wood_piece_ore",
+    "woodexpanded:dark_oak_wood_piece_ore",
+    "woodexpanded:jungle_wood_piece_ore",
+    "woodexpanded:acacia_wood_piece_ore",
+    "woodexpanded:mangrove_wood_piece_ore"
   ]
 }

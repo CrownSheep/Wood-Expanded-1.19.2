@@ -2,7 +2,7 @@ package net.crownsheep.woodexpanded.event;
 
 import net.crownsheep.woodexpanded.WoodExpended;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
-import net.crownsheep.woodexpanded.renderer.CarvingStationBlockEntityRenderer;
+import net.crownsheep.woodexpanded.client.renderer.CarvingStationBlockEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

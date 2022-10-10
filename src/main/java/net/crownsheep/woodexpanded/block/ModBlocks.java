@@ -5,8 +5,10 @@ import net.crownsheep.woodexpanded.block.custom.*;
 import net.crownsheep.woodexpanded.item.ModCreativeModeTab;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.world.feature.tree.PineTreeGrower;
+import net.crownsheep.woodexpanded.world.feature.tree.PurpurTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -312,6 +314,113 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CREEPER_STATUE = registerBlock("creeper_statue",
             () -> new CreeperStatue(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> OAK_WOOD_PIECE_ORE = registerBlock("oak_wood_piece_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> BIRCH_WOOD_PIECE_ORE = registerBlock("birch_wood_piece_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> SPRUCE_WOOD_PIECE_ORE = registerBlock("spruce_wood_piece_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> DARK_OAK_WOOD_PIECE_ORE = registerBlock("dark_oak_wood_piece_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> JUNGLE_WOOD_PIECE_ORE = registerBlock("jungle_wood_piece_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> ACACIA_WOOD_PIECE_ORE = registerBlock("acacia_wood_piece_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> MANGROVE_WOOD_PIECE_ORE = registerBlock("mangrove_wood_piece_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(5f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 7)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> CHAIR = registerBlock("chair",
+            () -> new ChairBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PURPUR_LOG = registerBlock("purpur_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PURPUR_WOOD = registerBlock("purpur_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> STRIPPED_PURPUR_LOG = registerBlock("stripped_purpur_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> STRIPPED_PURPUR_WOOD = registerBlock("stripped_purpur_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)), ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PURPUR_PLANKS = registerBlock("purpur_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 5;
+                }
+            }, ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PURPUR_SLAB = registerBlock("purpur_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 5;
+                }
+            }, ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PURPUR_LEAVES = registerBlock("purpur_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+                    return 30;
+                }
+            }, ModCreativeModeTab.WOOD_TAB);
+
+    public static final RegistryObject<Block> PURPUR_SAPLING = registerBlock("purpur_sapling",
+            () -> new SaplingBlock(new PurpurTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.WOOD_TAB);
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

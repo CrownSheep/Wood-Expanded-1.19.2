@@ -1,4 +1,4 @@
-package net.crownsheep.woodexpanded.renderer;
+package net.crownsheep.woodexpanded.client.renderer;
 
 
 import com.mojang.blaze3d.platform.GlStateManager;

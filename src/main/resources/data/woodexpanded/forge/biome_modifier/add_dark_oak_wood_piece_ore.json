@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#woodexpanded:is_dark_oak",
+  "features": "woodexpanded:dark_oak_wood_piece_ore_placed",
+  "step": "underground_ores"
+}

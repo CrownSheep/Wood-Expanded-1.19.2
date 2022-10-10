@@ -200,6 +200,27 @@ public class ModItems {
             () -> new SwordItem(Tiers.IRON, -2, -3, new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1).defaultDurability(100)));
     public static final RegistryObject<Item> PINE_HORSE_ARMOR = ITEMS.register("pine_horse_armor",
             () -> new HorseArmorItem(5, "pine", new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> OAK_WOOD_PIECE = ITEMS.register("oak_wood_piece",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> BIRCH_WOOD_PIECE = ITEMS.register("birch_wood_piece",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> SPRUCE_WOOD_PIECE = ITEMS.register("spruce_wood_piece",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> DARK_OAK_WOOD_PIECE = ITEMS.register("dark_oak_wood_piece",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> JUNGLE_WOOD_PIECE = ITEMS.register("jungle_wood_piece",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> ACACIA_WOOD_PIECE = ITEMS.register("acacia_wood_piece",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
+
+    public static final RegistryObject<Item> MANGROVE_WOOD_PIECE = ITEMS.register("mangrove_wood_piece",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.WOOD_TAB)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

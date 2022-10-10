@@ -1,0 +1,13 @@
+{
+  "values": [
+    "minecraft:plains",
+    "minecraft:snowy_plains",
+    "minecraft:meadow",
+    "minecraft:sunflower_plains",
+    "minecraft:wooded_badlands",
+    "minecraft:flower_forest",
+    "minecraft:forest",
+    "minecraft:swamp",
+    "minecraft:lush_caves"
+  ]
+}

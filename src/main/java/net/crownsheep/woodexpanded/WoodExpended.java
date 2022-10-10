@@ -3,6 +3,8 @@ package net.crownsheep.woodexpanded;
 import com.mojang.logging.LogUtils;
 import net.crownsheep.woodexpanded.block.ModBlocks;
 import net.crownsheep.woodexpanded.block.entity.ModBlockEntities;
+import net.crownsheep.woodexpanded.client.renderer.SeatRenderer;
+import net.crownsheep.woodexpanded.entity.ModEntityTypes;
 import net.crownsheep.woodexpanded.item.ModItems;
 import net.crownsheep.woodexpanded.networking.ModMessages;
 import net.crownsheep.woodexpanded.recipe.ModRecipes;
@@ -15,6 +17,7 @@ import net.crownsheep.woodexpanded.world.feature.ModPlacedFeatures;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.FoliageColor;
@@ -53,6 +56,7 @@ public class WoodExpended
         ModBlockEntities.register(modEventBus);
 
         ModRecipes.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
 
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
@@ -81,6 +85,7 @@ public class WoodExpended
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINE_SAPLING.get(), RenderType.cutout());
 
             MenuScreens.register(ModMenuTypes.CARVING_STATION_MENU.get(), CarvingStationScreen::new);
+            EntityRenderers.register(ModEntityTypes.SEAT.get(), SeatRenderer::new);
         }
     }
 

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "woodexpanded:block/stripped_purpur_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "woodexpanded:block/stripped_purpur_wood"
+    },
+    "axis=z": {
+      "model": "woodexpanded:block/stripped_purpur_wood_horizontal",
+      "x": 90
+    }
+  }
+}
